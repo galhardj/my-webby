@@ -1,6 +1,7 @@
 import styles from "./BannerTwo.module.css";
+import { banner } from "@/src/type/banner";
 
-const Banner = (props: any) => {
+const Banner = (props: { content: banner }) => {
   return (
     <div className={styles.banner_container}>
       <div className={styles.banner_image}>
@@ -8,9 +9,7 @@ const Banner = (props: any) => {
       </div>
       <div className={styles.banner_text}>
         <h2 className="h2">{props.content.title}</h2>
-        <p>
-          {props.content.description}
-        </p>
+        <p>{props.content.description}</p>
       </div>
     </div>
   );

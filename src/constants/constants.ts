@@ -34,3 +34,12 @@ export const HOMEPAGE_CONTENT = {
   </g>\
 </svg>",
 } as const;
+
+export const BANNER_TWO = {
+  image: {
+    src: "/images/meetings.png",
+    alt: "Season Sip Banner"
+  },
+  title: "Welcome back, Pumpkin Spice Latte",
+  description: "It's the sip you've been waiting for all year. Our Pumpkin Spice Latte brings autumn to life in every cup."
+} as const;

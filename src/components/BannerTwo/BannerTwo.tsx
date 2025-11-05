@@ -1,12 +1,16 @@
-import styles from "./Banner.module.css";
+import styles from "./BannerTwo.module.css";
 
-const Banner = () => {
+const Banner = (props: any) => {
+    // Defensive: content may be undefined when this component is rendered
+    // (for example on the home page if the parent doesn't pass data).
+    const altText = props?.content?.BANNER_TWO?.image?.alt ?? "Banner image";
+
     return (
         <div className={styles.banner_container}>
             <div className={styles.banner_image}>
                 <img
                     src="/images/meetings.png"
-                    alt="Season Sip Banner"
+                    alt={altText}
                 />
             </div>
             <div className={styles.banner_text}>

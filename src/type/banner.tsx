@@ -1,8 +1,10 @@
 export interface banner {
-  image: {
-    src: string;
-    alt: string;
+  content: {
+    image: {
+      src: string;
+      alt: string;
+    };
+    title: string;
+    description: string;
   };
-  title: string;
-  description: string;
 }

@@ -1,7 +1,7 @@
 import styles from "./Banner.module.css";
-import { BannerTwo } from "@/src/type/banner";
+import type { Banner } from "@/src/type/content";
 
-const Banner = ({ content }: BannerTwo) => {
+const Banner = ({ content }: Banner) => {
   return (
     <section
       className={`${styles.banner_container} ${styles[`layout--${content.position}`]}`}

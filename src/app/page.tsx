@@ -15,7 +15,10 @@ export default function Page() {
         title={BANNER.title}
         description={BANNER.description}
       />
-      <Accordion accordions={ACCORDION_ITEMS} />
+      <Accordion
+        title={ACCORDION_ITEMS.title}
+        accordions={ACCORDION_ITEMS.accordions}
+      />
       <Footer />
     </main>
   );

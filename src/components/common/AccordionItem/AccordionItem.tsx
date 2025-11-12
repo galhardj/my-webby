@@ -1,8 +1,21 @@
+"use client";
+
+import styles from "./AccordionItem.module.css";
 import type { AccordionItemProp } from "@/src/type/prop";
 
-const AccordionItem = ({ key, summary, description }: AccordionItemProp) => {
+const AccordionItem = ({
+  id,
+  summary,
+  description,
+  openItem,
+  onItemClick,
+}: AccordionItemProp) => {
   return (
-    <details key={key}>
+    <details
+      className={styles["accordion-item"]}
+      onClick={() => onItemClick(id)}
+      open={openItem}
+    >
       <summary>{summary}</summary>
       <p>{description}</p>
     </details>

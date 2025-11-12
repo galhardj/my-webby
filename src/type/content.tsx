@@ -15,5 +15,6 @@ export interface AccordionItem {
 }
 
 export interface Accordion {
+  title?: string;
   accordions: AccordionItem[];
 }

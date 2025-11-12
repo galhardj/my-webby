@@ -1,5 +1,7 @@
 export interface AccordionItemProp {
-  key: number;
+  id: number;
   summary: string;
   description: string;
+  openItem: boolean;
+  onItemClick: (id: number) => void;
 }

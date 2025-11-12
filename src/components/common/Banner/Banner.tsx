@@ -1,17 +1,17 @@
 import styles from "./Banner.module.css";
 import type { Banner } from "@/src/type/content";
 
-const Banner = ({ content }: Banner) => {
+const Banner = ({ position, image, title, description }: Banner) => {
   return (
     <section
-      className={`${styles.banner_container} ${styles[`layout--${content.position}`]}`}
+      className={`${styles.banner_container} ${styles[`layout--${position}`]}`}
     >
       <figure className={styles.banner_flex}>
-        <img src={content.image.src} alt={content.image.alt} />
+        <img src={image.src} alt={image.alt} />
       </figure>
       <div className={`${styles.banner_text} ${styles.banner_flex}`}>
-        <h2 className="h2">{content.title}</h2>
-        <p>{content.description}</p>
+        <h2 className="h2">{title}</h2>
+        <p>{description}</p>
       </div>
     </section>
   );

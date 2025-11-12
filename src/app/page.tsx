@@ -9,7 +9,12 @@ export default function Page() {
   return (
     <main className="min-h-dvh">
       <BannerLegacy />
-      <Banner content={BANNER} />
+      <Banner
+        position={BANNER.position}
+        image={BANNER.image}
+        title={BANNER.title}
+        description={BANNER.description}
+      />
       <Accordion accordions={ACCORDION_ITEMS} />
       <Footer />
     </main>

@@ -17,4 +17,5 @@ main > section {
   align-items: center; /* vertical centering of image + text */
   justify-content: center; /* center children horizontally inside the banner */
   margin: 0 auto; /* center this container within its parent */
+  @apply px-6 py-12;
 }

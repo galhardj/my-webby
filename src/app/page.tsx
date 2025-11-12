@@ -1,7 +1,7 @@
-import BannerLegacy from "../components/BannerLegacy/BannerLegacy";
-import Footer from "../components/Footer/Footer";
-import Banner from "../components/Banner/BannerTwo";
-import { BANNER_TWO } from "../constants/constants";
+import BannerLegacy from "@/src/components/BannerLegacy/BannerLegacy";
+import Footer from "@/src/components/Footer/Footer";
+import Banner from "@/src/components/Banner/Banner";
+import { BANNER_TWO } from "@/src/constants/constants";
 
 export default function Page() {
   return (

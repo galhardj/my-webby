@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HOMEPAGE_CONTENT } from "../../constants/constants";
+import { HOMEPAGE_CONTENT } from "../../../constants/constants";
 
 const Images = () => {
   return (

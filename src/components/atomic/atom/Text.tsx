@@ -1,4 +1,4 @@
-import { HOMEPAGE_CONTENT } from "../../constants/constants";
+import { HOMEPAGE_CONTENT } from "@/src/constants/constants";
 
 const Text = () => {
   return (

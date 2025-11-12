@@ -1,4 +1,4 @@
-import styles from "./BannerTwo.module.css";
+import styles from "./Banner.module.css";
 import { BannerTwo } from "@/src/type/banner";
 
 const Banner = ({ content }: BannerTwo) => {

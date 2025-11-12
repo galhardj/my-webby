@@ -1,7 +1,7 @@
-import Text from "./atom/Text";
-import Image from "./atom/Image";
+import Text from "./../atomic/atom/Text";
+import Image from "./../atomic/atom/Image";
 
-const Banner = () => {
+const BannerLegacy = () => {
   return (
     <section className="mx-auto max-w-5xl px-6 py-12">
       <div className="grid gap-10 md:grid-cols-2 md:items-center">
@@ -12,4 +12,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default BannerLegacy;

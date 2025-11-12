@@ -36,6 +36,7 @@ export const HOMEPAGE_CONTENT = {
 } as const;
 
 export const BANNER_TWO = {
+  position: "left",
   image: {
     src: "/images/meetings.png",
     alt: "Season Sip Banner",

@@ -1,20 +1,6 @@
 .banner_container {
-  /* Make the banner center itself horizontally and align children vertically.
-     - width / max-width + margin auto centers the container in its parent
-     - align-items centers children vertically within the banner
-     - gap provides spacing between image and text
-  */
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* vertical centering of image + text */
-  justify-content: center; /* center children horizontally inside the banner */
-  max-width: 1200px; /* constraint to keep banner from stretching too wide */
-  margin: 0 auto; /* center this container within its parent */
   gap: 1.5rem;
   padding: 1rem;
-}
-
-.banner_image {
 }
 
 .banner_image img {
@@ -29,8 +15,16 @@
   justify-content: center;
 }
 
-/* Optional helpers:
-   - To vertically center the banner in the viewport, add `min-height: 60vh` to
-     `.banner_container` or use `height: 100vh` if you want full-screen centering.
-   - Adjust max-width to match your layout breakpoints.
-*/
+.banner_flex {
+  flex: 1;
+}
+
+/* left & right layout */
+
+.layout--left {
+  flex-direction: row;
+}
+
+.layout--right {
+  flex-direction: row-reverse;
+}

@@ -1,17 +1,19 @@
 import styles from "./BannerTwo.module.css";
-import { banner } from "@/src/type/banner";
+import { BannerTwo } from "@/src/type/banner";
 
-const Banner = ({ content }: banner) => {
+const Banner = ({ content }: BannerTwo) => {
   return (
-    <div className={styles.banner_container}>
-      <div className={styles.banner_image}>
+    <section
+      className={`${styles.banner_container} ${styles[`layout--${content.position}`]}`}
+    >
+      <figure className={styles.banner_flex}>
         <img src={content.image.src} alt={content.image.alt} />
-      </div>
-      <div className={styles.banner_text}>
+      </figure>
+      <div className={`${styles.banner_text} ${styles.banner_flex}`}>
         <h2 className="h2">{content.title}</h2>
         <p>{content.description}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

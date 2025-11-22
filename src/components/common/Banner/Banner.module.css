@@ -1,7 +1,6 @@
 .banner_container {
   display: flex;
   gap: 1.5rem;
-  padding: 1rem;
 }
 
 .banner_image img {
@@ -14,6 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
 }
 
 .banner_flex {

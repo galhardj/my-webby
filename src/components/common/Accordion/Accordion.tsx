@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import AccordionItem from "@/src/components/common/AccordionItem/AccordionItem";
+import AccordionItem from "@/src/components/common/Accordion/AccordionItem/AccordionItem";
 import type { Accordion } from "@/src/type/content";
 
 const Accordion = ({ title, accordions }: Accordion) => {

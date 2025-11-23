@@ -1,4 +1,4 @@
-import Input from "../Input";
+import Input from "./Input";
 import type { Checkbox } from "@/src/type/prop";
 
 const Checkbox = ({ legend, checkboxes }: Checkbox) => {

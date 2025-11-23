@@ -1,8 +1,8 @@
 import styles from "./Form.module.css";
-import Input from "../../atomic/Input";
-import Select from "../../atomic/Select";
-import Checkbox from "../../atomic/Checkbox";
-import Textarea from "../../atomic/Textarea";
+import Input from "../../atomic/common/Input";
+import Select from "../../atomic/common/Select";
+import Checkbox from "../../atomic/common/Checkbox";
+import Textarea from "../../atomic/common/Textarea";
 import Container from "./Container/Container";
 import type { Form } from "@/src/type/prop";
 

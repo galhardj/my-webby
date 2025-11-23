@@ -1,5 +1,5 @@
 import type { Input } from "@/src/type/prop";
-import Container from "./Container/Container";
+import Container from "../Container/Container";
 
 const Input = ({ id, type, label }: Input) => {
   const InputCommon = () => (

@@ -1,5 +1,5 @@
 import type { Textarea } from "@/src/type/prop";
-import Container from "./Container/Container";
+import Container from "../Container/Container";
 
 const Textarea = ({ id, label, placeholder }: Textarea) => {
   return (

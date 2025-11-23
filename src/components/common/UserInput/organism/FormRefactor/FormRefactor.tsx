@@ -1,6 +1,7 @@
 import styles from "./FormRefactor.module.css";
 import Input from "../../atomic/Input";
 import Select from "../../atomic/Select";
+import Checkbox from "../../atomic/Checkbox";
 
 const FormRefactor = () => {
   return (
@@ -28,14 +29,10 @@ const FormRefactor = () => {
           />
         </div>
 
-        <fieldset>
-          <legend>Please pick your daily device</legend>
-
-          <Input id="mobile-phone" type="checkbox" label="Mobile phone"/>
-          <Input id="laptop" type="checkbox" label="Laptop"/>
-          <Input id="tablet" type="checkbox" label="Tablet"/>
-
-        </fieldset>
+        <Checkbox
+          legend="Please pick your daily device"
+          checkboxes={["Mobile phone", "Laptop", "Tablet"]}
+        />
 
         <div className={styles["form-label"]}>
           <label htmlFor="message">Message</label>

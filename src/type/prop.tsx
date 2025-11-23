@@ -17,3 +17,8 @@ export interface Select {
   label: string;
   options: string[];
 }
+
+export interface Checkbox {
+  legend: string;
+  checkboxes: string[];
+}

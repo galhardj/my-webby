@@ -1,6 +1,7 @@
-import styles from "./Form.module.css";
+import styles from "./FormRefactor.module.css";
+import Input from "../atomic/Input";
 
-const Form = () => {
+const FormRefactor = () => {
   return (
     <section className={styles["form-section"]}>
       <h2>Customer Form</h2>
@@ -10,20 +11,9 @@ const Form = () => {
       </p>
       <form className={styles.form}>
         <div className={styles["form-grid"]}>
-          <div className={styles["form-label"]}>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" />
-          </div>
-
-          <div className={styles["form-label"]}>
-            <label htmlFor="age">Age</label>
-            <input type="number" id="age" name="age" />
-          </div>
-
-          <div className={styles["form-label"]}>
-            <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
+          <Input id="name" type="text" label="Nameee!" />
+          <Input id="age" type="number" label="Age" />
+          <Input id="phone" type="tel" label="Phone Number" />
 
           <div className={styles["form-label"]}>
             <label htmlFor="hobby">Hobby</label>
@@ -71,4 +61,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormRefactor;

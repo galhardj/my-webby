@@ -3,6 +3,7 @@ import Footer from "@/src/components/common/Footer/Footer";
 import Banner from "@/src/components/common/Banner/Banner";
 import Accordion from "@/src/components/common/Accordion/Accordion";
 import Form from "@/src/components/common/UserInput/Form/Form";
+import FormRefactor from "@/src/components/common/UserInput/FormRefactor/FormRefactor";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 
@@ -21,6 +22,7 @@ export default function Page() {
         accordions={ACCORDION_ITEMS.accordions}
       />
       <Form />
+      <FormRefactor />
       <Footer />
     </main>
   );

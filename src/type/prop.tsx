@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 export interface AccordionItemProp {
   id: number;
   summary: string;
@@ -10,5 +9,11 @@ export interface AccordionItemProp {
 export interface Input {
   id: string;
   type: string;
-  children: ReactNode;
+  label: string;
+}
+
+export interface Select {
+  id: string;
+  label: string;
+  options: string[];
 }

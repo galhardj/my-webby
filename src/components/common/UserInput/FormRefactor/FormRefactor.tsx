@@ -1,5 +1,6 @@
 import styles from "./FormRefactor.module.css";
 import Input from "../atomic/Input";
+import Select from "../atomic/Select";
 
 const FormRefactor = () => {
   return (
@@ -11,20 +12,20 @@ const FormRefactor = () => {
       </p>
       <form className={styles.form}>
         <div className={styles["form-grid"]}>
-          <Input id="name" type="text">Name</Input>
-          <Input id="age" type="number">Age</Input>
-          <Input id="phone" type="tel">Phone Number</Input>
-
-          <div className={styles["form-label"]}>
-            <label htmlFor="hobby">Hobby</label>
-            <select id="hobby" name="hobby">
-              <option value="">Please pick one of the hobbies</option>
-              <option value="travel">Travel</option>
-              <option value="reading">Reading</option>
-              <option value="writing">Writing</option>
-              <option value="sport">Sport</option>
-            </select>
-          </div>
+          <Input id="name" type="text" label="Name" />
+          <Input id="age" type="number" label="Age" />
+          <Input id="phone" type="tel" label="Phone Number" />
+          <Select
+            id="hobby"
+            label="Hobby"
+            options={[
+              "Please pick one of the hobbies",
+              "Travel",
+              "Reading",
+              "Writing",
+              "Sport",
+            ]}
+          />
         </div>
 
         <fieldset>

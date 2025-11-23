@@ -8,7 +8,9 @@ const Select = ({ id, label, options }: Select) => {
       <select id={id} name={id}>
         <option value="">{options[0]}</option>
         {options.slice(1).map((option, index) => (
-          <option value={option.toLocaleLowerCase()} key={index}>{option}</option>
+          <option value={option.toLocaleLowerCase()} key={index}>
+            {option}
+          </option>
         ))}
       </select>
     </Container>

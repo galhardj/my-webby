@@ -22,3 +22,9 @@ export interface Checkbox {
   legend: string;
   checkboxes: string[];
 }
+
+export interface Textarea {
+  id: string;
+  label: string;
+  placeholder: string;
+}

@@ -2,6 +2,7 @@ import styles from "./FormRefactor.module.css";
 import Input from "../../atomic/Input";
 import Select from "../../atomic/Select";
 import Checkbox from "../../atomic/Checkbox";
+import Textarea from "../../atomic/Textarea";
 
 const FormRefactor = () => {
   return (
@@ -34,14 +35,11 @@ const FormRefactor = () => {
           checkboxes={["Mobile phone", "Laptop", "Tablet"]}
         />
 
-        <div className={styles["form-label"]}>
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Please input your suggestion here"
-          />
-        </div>
+        <Textarea
+          id="message"
+          label="Message"
+          placeholder="Please input your suggestion here"
+        />
 
         <button>Submit</button>
       </form>

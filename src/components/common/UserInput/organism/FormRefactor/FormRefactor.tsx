@@ -1,6 +1,6 @@
 import styles from "./FormRefactor.module.css";
-import Input from "../atomic/Input";
-import Select from "../atomic/Select";
+import Input from "../../atomic/Input";
+import Select from "../../atomic/Select";
 
 const FormRefactor = () => {
   return (

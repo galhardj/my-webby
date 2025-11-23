@@ -1,10 +1,11 @@
-import styles from "./FormRefactor.module.css";
+import styles from "./Form.module.css";
 import Input from "../../atomic/Input";
 import Select from "../../atomic/Select";
 import Checkbox from "../../atomic/Checkbox";
 import Textarea from "../../atomic/Textarea";
+import Container from "./Container/Container";
 
-const FormRefactor = () => {
+const Form = () => {
   return (
     <section className={styles["form-section"]}>
       <h2>Customer Form</h2>
@@ -13,7 +14,7 @@ const FormRefactor = () => {
         inquiries to raise to our team!
       </p>
       <form className={styles.form}>
-        <div className={styles["form-grid"]}>
+        <Container column="1fr 1fr">
           <Input id="name" type="text" label="Name" />
           <Input id="age" type="number" label="Age" />
           <Input id="phone" type="tel" label="Phone Number" />
@@ -28,18 +29,19 @@ const FormRefactor = () => {
               "Sport",
             ]}
           />
-        </div>
+        </Container>
 
-        <Checkbox
-          legend="Please pick your daily device"
-          checkboxes={["Mobile phone", "Laptop", "Tablet"]}
-        />
-
-        <Textarea
-          id="message"
-          label="Message"
-          placeholder="Please input your suggestion here"
-        />
+        <Container column="1fr">
+          <Checkbox
+            legend="Please pick your daily device"
+            checkboxes={["Mobile phone", "Laptop", "Tablet"]}
+          />
+          <Textarea
+            id="message"
+            label="Message"
+            placeholder="Please input your suggestion here"
+          />
+        </Container>
 
         <button>Submit</button>
       </form>
@@ -47,4 +49,4 @@ const FormRefactor = () => {
   );
 };
 
-export default FormRefactor;
+export default Form;

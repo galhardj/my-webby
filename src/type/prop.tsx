@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface AccordionItemProp {
   id: number;
   summary: string;
@@ -27,4 +29,9 @@ export interface Textarea {
   id: string;
   label: string;
   placeholder: string;
+}
+
+export interface FormContainer {
+  column: "1fr 1fr" | "1fr";
+  children: ReactNode;
 }

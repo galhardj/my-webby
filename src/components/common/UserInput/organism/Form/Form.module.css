@@ -28,12 +28,6 @@
   background: #ddd;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
 .form fieldset {
   border: 1px solid #ddd;
   padding: 0.5rem;

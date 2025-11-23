@@ -4,15 +4,13 @@ import Select from "../../atomic/Select";
 import Checkbox from "../../atomic/Checkbox";
 import Textarea from "../../atomic/Textarea";
 import Container from "./Container/Container";
+import type { Form } from "@/src/type/prop";
 
-const Form = () => {
+const Form = ({ title, description }: Form) => {
   return (
     <section className={styles["form-section"]}>
-      <h2>Customer Form</h2>
-      <p>
-        Please fill below form to inform us on what to improve or for any
-        inquiries to raise to our team!
-      </p>
+      <h2>{title}</h2>
+      <p>{description}</p>
       <form className={styles.form}>
         <Container column="1fr 1fr">
           <Input id="name" type="text" label="Name" />

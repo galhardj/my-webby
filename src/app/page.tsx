@@ -5,6 +5,7 @@ import Accordion from "@/src/components/common/Accordion/Accordion";
 import Form from "@/src/components/common/UserInput/organism/Form/Form";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
+import { FORM } from "@/src/constants/form";
 
 export default function Page() {
   return (
@@ -20,7 +21,7 @@ export default function Page() {
         title={ACCORDION_ITEMS.title}
         accordions={ACCORDION_ITEMS.accordions}
       />
-      <Form />
+      <Form title={FORM.title} description={FORM.description} />
       <Footer />
     </main>
   );

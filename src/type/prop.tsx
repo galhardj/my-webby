@@ -35,3 +35,8 @@ export interface FormContainer {
   column: "1fr 1fr" | "1fr";
   children: ReactNode;
 }
+
+export interface Form {
+  title: string;
+  description: string;
+}

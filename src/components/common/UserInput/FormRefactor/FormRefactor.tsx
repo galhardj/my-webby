@@ -31,20 +31,10 @@ const FormRefactor = () => {
         <fieldset>
           <legend>Please pick your daily device</legend>
 
-          <div>
-            <input type="checkbox" id="mobile-phone" name="mobile-phone" />
-            <label htmlFor="mobile-phone">Mobile phone</label>
-          </div>
+          <Input id="mobile-phone" type="checkbox" label="Mobile phone"/>
+          <Input id="laptop" type="checkbox" label="Laptop"/>
+          <Input id="tablet" type="checkbox" label="Tablet"/>
 
-          <div>
-            <input type="checkbox" id="laptop" name="laptop" />
-            <label htmlFor="laptop">Laptop</label>
-          </div>
-
-          <div>
-            <input type="checkbox" id="tablet" name="tablet" />
-            <label htmlFor="tablet">Tablet</label>
-          </div>
         </fieldset>
 
         <div className={styles["form-label"]}>

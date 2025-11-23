@@ -11,9 +11,9 @@ const FormRefactor = () => {
       </p>
       <form className={styles.form}>
         <div className={styles["form-grid"]}>
-          <Input id="name" type="text" label="Nameee!" />
-          <Input id="age" type="number" label="Age" />
-          <Input id="phone" type="tel" label="Phone Number" />
+          <Input id="name" type="text">Name</Input>
+          <Input id="age" type="number">Age</Input>
+          <Input id="phone" type="tel">Phone Number</Input>
 
           <div className={styles["form-label"]}>
             <label htmlFor="hobby">Hobby</label>

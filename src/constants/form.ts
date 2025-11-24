@@ -12,7 +12,7 @@ export const FORM: Form = {
   containers: [
     {
       column: 2,
-      userInput: [
+      inputs: [
         {
           fieldType: "input",
           type: "text",
@@ -47,7 +47,7 @@ export const FORM: Form = {
     },
     {
       column: 1,
-      userInput: [
+      inputs: [
         {
           fieldType: "checkbox",
           legend: "Please pick your daily device",

@@ -32,11 +32,24 @@ export interface Textarea {
 }
 
 export interface FormContainer {
-  column: "1fr 1fr" | "1fr";
+  column: string;
   children: ReactNode;
 }
 
 export interface Form {
   title: string;
   description: string;
+  containers: formContainer[];
+  buttonText: string;
 }
+
+export interface formContainer {
+  column: 1 | 2;
+  inputs: input[];
+}
+
+export type input =
+  | ({ fieldType: "input" } & Input)
+  | ({ fieldType: "select" } & Select)
+  | ({ fieldType: "checkbox" } & Checkbox)
+  | ({ fieldType: "textarea" } & Textarea);

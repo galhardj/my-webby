@@ -21,7 +21,12 @@ export default function Page() {
         title={ACCORDION_ITEMS.title}
         accordions={ACCORDION_ITEMS.accordions}
       />
-      <Form title={FORM.title} description={FORM.description} />
+      <Form
+        title={FORM.title}
+        description={FORM.description}
+        containers={FORM.containers}
+        buttonText={FORM.buttonText}
+      />
       <Footer />
     </main>
   );

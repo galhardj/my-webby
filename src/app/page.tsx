@@ -6,6 +6,7 @@ import Form from "@/src/components/common/UserInput/organism/Form/Form";
 import StatusCard from "@/src/components/css-framework/shadcn/StatusCard";
 import HighlightCarousel from "@/src/components/css-framework/shadcn/HighlightCarousel";
 import Timeline from "@/src/components/css-framework/daisyui/Timeline";
+import Testimonial from "@/src/components/css-framework/tailwindcss/Testimonial";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";
@@ -33,6 +34,7 @@ export default function Page() {
       <StatusCard />
       <HighlightCarousel />
       <Timeline />
+      <Testimonial />
       <Footer />
     </main>
   );

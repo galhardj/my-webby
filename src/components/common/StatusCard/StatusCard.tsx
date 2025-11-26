@@ -5,12 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/src/components/shadcn-ui/card";
-
-const STATUS = [
-  { label: "Deployments", value: "All systems go" },
-  { label: "Latency (p95)", value: "142 ms" },
-  { label: "Active regions", value: "7" },
-];
+import { STATUS } from "@/src/constants/shadcn-ui";
 
 export default function StatusCard() {
   return (

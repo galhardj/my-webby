@@ -4,6 +4,7 @@ import Banner from "@/src/components/common/Banner/Banner";
 import Accordion from "@/src/components/common/Accordion/Accordion";
 import Form from "@/src/components/common/UserInput/organism/Form/Form";
 import StatusCard from "@/src/components/common/StatusCard/StatusCard";
+import HighlightCarousel from "@/src/components/common/HighlightCarousel/HighlightCarousel";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";
@@ -29,7 +30,7 @@ export default function Page() {
         buttonText={FORM.buttonText}
       />
       <StatusCard />
-
+      <HighlightCarousel />
       <Footer />
     </main>
   );

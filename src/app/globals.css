@@ -3,6 +3,7 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@plugin "daisyui";
 
 /* Base CSS variables or resets can go here if needed */
 html,

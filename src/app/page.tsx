@@ -5,6 +5,7 @@ import Accordion from "@/src/components/common/Accordion/Accordion";
 import Form from "@/src/components/common/UserInput/organism/Form/Form";
 import StatusCard from "@/src/components/common/StatusCard/StatusCard";
 import HighlightCarousel from "@/src/components/common/HighlightCarousel/HighlightCarousel";
+import Timeline from "@/src/components/common/Timeline/Timeline";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";
@@ -31,6 +32,7 @@ export default function Page() {
       />
       <StatusCard />
       <HighlightCarousel />
+      <Timeline />
       <Footer />
     </main>
   );

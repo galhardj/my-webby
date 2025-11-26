@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
+} from "@/src/components/shadcn-ui/card";
 
 const STATUS = [
   { label: "Deployments", value: "All systems go" },

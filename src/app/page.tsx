@@ -18,7 +18,6 @@ export default function Page() {
         title={BANNER.title}
         description={BANNER.description}
       />
-      <StatusCard />
       <Accordion
         title={ACCORDION_ITEMS.title}
         accordions={ACCORDION_ITEMS.accordions}
@@ -29,6 +28,8 @@ export default function Page() {
         containers={FORM.containers}
         buttonText={FORM.buttonText}
       />
+      <StatusCard />
+      
       <Footer />
     </main>
   );

@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/src/components/shadcn-ui/card";
+} from "@/src/components/css-framework/shadcn/ui/card";
 import { STATUS } from "@/src/constants/shadcn-ui";
 
 export default function StatusCard() {

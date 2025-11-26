@@ -4,7 +4,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/src/components/shadcn-ui/carousel";
+} from "@/src/components/css-framework/shadcn/ui/carousel";
 import { STORIES } from "@/src/constants/shadcn-ui";
 
 export default function HighlightCarousel() {

@@ -1,5 +1,4 @@
 import BannerLegacy from "@/src/components/common/Banner/BannerLegacy/BannerLegacy";
-import Footer from "@/src/components/common/Footer/Footer";
 import Banner from "@/src/components/common/Banner/Banner";
 import Accordion from "@/src/components/common/Accordion/Accordion";
 import Form from "@/src/components/common/UserInput/organism/Form/Form";
@@ -37,7 +36,6 @@ export default function Page() {
       <Timeline />
       <Testimonial />
       <Diff />
-      <Footer />
     </main>
   );
 }

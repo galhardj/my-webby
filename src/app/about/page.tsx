@@ -7,7 +7,7 @@ import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";
 
-export default function AboutPage() {
+export default function Page() {
   return (
     <main className="min-h-dvh">
       <BannerLegacy />

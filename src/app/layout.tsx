@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/src/components/common/Footer/Footer";
+import NavigationMenuBar from "../components/css-framework/shadcn/NavigationMenu";
 
 export const metadata: Metadata = {
   title: "My Webby",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <NavigationMenuBar />
         {children}
         <Footer />
       </body>

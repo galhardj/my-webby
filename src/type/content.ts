@@ -5,7 +5,8 @@ export interface Banner {
     alt: string;
   };
   title: string;
-  description: string;
+  description?: string;
+  richText?: React.ReactNode;
 }
 
 export interface AccordionItem {

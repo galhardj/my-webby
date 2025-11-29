@@ -5,16 +5,22 @@ import Form from "@/src/components/common/UserInput/organism/Form/Form";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { fetchContentful } from "@/src/lib/contentful";
 
-export default function Page() {
+const contentfulBanner = await fetchContentful();
+
+export default async function Page() {
   return (
     <main className="min-h-dvh">
       <BannerLegacy />
       <Banner
-        position={BANNER.position}
+        position={contentfulBanner.fields.imagePosition ? "left" : "right"}
         image={BANNER.image}
-        title={BANNER.title}
-        description={BANNER.description}
+        title={contentfulBanner.fields.title}
+        richText={documentToReactComponents(
+          contentfulBanner.fields.description,
+        )}
       />
       <Accordion
         title={ACCORDION_ITEMS.title}

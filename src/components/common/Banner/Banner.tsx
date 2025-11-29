@@ -1,7 +1,7 @@
 import styles from "./Banner.module.css";
 import type { Banner } from "@/src/type/content";
 
-const Banner = ({ position, image, title, description }: Banner) => {
+const Banner = ({ position, image, title, description, richText }: Banner) => {
   return (
     <section
       className={`${styles.banner_container} ${styles[`layout--${position}`]}`}
@@ -12,6 +12,7 @@ const Banner = ({ position, image, title, description }: Banner) => {
       <div className={`${styles.banner_text} ${styles.banner_flex}`}>
         <h2 className="h2">{title}</h2>
         <p>{description}</p>
+        {richText}
       </div>
     </section>
   );

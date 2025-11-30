@@ -1,7 +1,9 @@
-export const fetchApi = async <T>(url: string): Promise<T> => {
+export const fetchApi = async <T>(
+  url: string,
+  options: RequestInit,
+): Promise<T> => {
   try {
-    const res = await fetch(url, { cache: "force-cache" });
-    console.log("this is data", res);
+    const res = await fetch(url, options);
 
     if (!res.ok) {
       throw new Error(`Fetch failed: ${res.status} ${res.statusText}`);

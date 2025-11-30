@@ -29,8 +29,8 @@ interface Sys {
 }
 
 interface LinkSys {
-  type: string;       // "Link"
-  linkType: string;   // "Space" | "Environment" | "ContentType" | "Asset" | "Entry"
+  type: string; // "Link"
+  linkType: string; // "Space" | "Environment" | "ContentType" | "Asset" | "Entry"
   id: string;
 }
 

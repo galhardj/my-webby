@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/src/styles/globals.css";
 import Footer from "@/src/components/common/Footer/Footer";
 import NavigationMenuBar from "../components/css-framework/shadcn/NavigationMenu";
 

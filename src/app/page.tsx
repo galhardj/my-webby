@@ -8,9 +8,9 @@ import { FORM } from "@/src/constants/form";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { fetchContentful } from "@/src/lib/contentful";
 
-const contentfulBanner = await fetchContentful();
-
 export default async function Page() {
+  const contentfulBanner = await fetchContentful();
+
   return (
     <main className="min-h-dvh">
       <BannerLegacy />

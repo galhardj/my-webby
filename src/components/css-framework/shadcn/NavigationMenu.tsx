@@ -37,7 +37,7 @@ export default function NavigationMenuBar() {
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger>New things to come</NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-white" >
+          <NavigationMenuContent className="bg-white">
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>

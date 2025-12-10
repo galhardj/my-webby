@@ -49,6 +49,9 @@ export default function NavigationMenuBar() {
                 <NavigationMenuLink asChild>
                   <Link href="#">Blogs SSG</Link>
                 </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <Link href="/ui-in-the-work">UI In The Work</Link>
+                </NavigationMenuLink>
               </li>
             </ul>
           </NavigationMenuContent>

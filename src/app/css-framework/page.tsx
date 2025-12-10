@@ -16,8 +16,6 @@ export default function Page() {
       <Timeline />
       <Testimonial />
       <GridList />
-      <AdminContactsGrid />
-      <ToggleSwitch />
     </main>
   );
 }

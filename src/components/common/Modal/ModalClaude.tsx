@@ -64,10 +64,7 @@ export default function ModalDemo() {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-40 bg-black/50"
-            aria-hidden="true"
-          />
+          <div className="fixed inset-0 z-40 bg-black/50" aria-hidden="true" />
 
           {/* Modal */}
           <div

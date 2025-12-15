@@ -5,6 +5,7 @@ import Diff from "@/src/components/css-framework/daisyui/Diff";
 import Testimonial from "@/src/components/css-framework/tailwindcss/Testimonial";
 import GridList from "@/src/components/css-framework/tailwindcss/GridList/GridList";
 import ModalDemo from "@/src/components/common/Modal/ModalClaude";
+import ModalSection from "@/src/components/common/Modal/Modal";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <Testimonial />
       <GridList />
       <ModalDemo />
+      <ModalSection />
     </main>
   );
 }

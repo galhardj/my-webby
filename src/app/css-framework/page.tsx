@@ -4,7 +4,7 @@ import Timeline from "@/src/components/css-framework/daisyui/Timeline";
 import Diff from "@/src/components/css-framework/daisyui/Diff";
 import Testimonial from "@/src/components/css-framework/tailwindcss/Testimonial";
 import GridList from "@/src/components/css-framework/tailwindcss/GridList/GridList";
-import ModalDemo from "@/src/components/common/Modal/Modal";
+import ModalDemo from "@/src/components/common/Modal/ModalClaude";
 
 export default function Page() {
   return (

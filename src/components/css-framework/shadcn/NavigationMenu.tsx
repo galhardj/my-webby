@@ -18,7 +18,7 @@ export default function NavigationMenuBar() {
   //   const isMobile = useIsMobile()
 
   return (
-    <NavigationMenu className="mx-auto px-6 py-6">
+    <NavigationMenu className="px-6 py-6 mx-auto">
       <NavigationMenuList className="flex-wrap">
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
@@ -33,6 +33,11 @@ export default function NavigationMenuBar() {
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/css-framework">CSS plugin pages</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/products">Products</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">

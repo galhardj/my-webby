@@ -47,14 +47,14 @@ const ModalSection = () => {
       {modalOpen && (
         <div onClick={setModal} className="fixed inset-0 z-30 bg-black/50">
           <div className="fixed inset-0 z-40 flex items-center justify-center">
-            <div className="flex flex-col max-w-md gap-4 px-8 py-4 bg-white border rounded-lg">
+            <div className="flex max-w-md flex-col gap-4 rounded-lg border bg-white px-8 py-4">
               <h2>Modal Title</h2>
               <p>
                 This modal automatically receives focus when opened. Press the
                 Escape key to close it and return focus to the button.
               </p>
               <div className="flex justify-end gap-4">
-                <Button onClick={setModal} className="text-gray-700 bg-gray-50">
+                <Button onClick={setModal} className="bg-gray-50 text-gray-700">
                   Cancel
                 </Button>
                 <Button ref={confirmRef} onClick={setModal}>

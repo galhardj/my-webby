@@ -18,7 +18,7 @@ export default function NavigationMenuBar() {
   //   const isMobile = useIsMobile()
 
   return (
-    <NavigationMenu className="px-6 py-6 mx-auto">
+    <NavigationMenu className="mx-auto px-6 py-6">
       <NavigationMenuList className="flex-wrap">
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>

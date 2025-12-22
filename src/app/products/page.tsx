@@ -1,11 +1,11 @@
-import AdminContactsGrid from "@/src/components/css-framework/tailwindcss/GridList/GridClaude";
-import ToggleSwitch from "@/src/components/css-framework/tailwindcss/ToggleSwitch";
+import FestiveMenu from "@/src/components/common/Products/ProductsClaude";
+import ProductList from "@/src/components/common/Products/ProductList";
 
 export default function Page() {
   return (
     <main className="min-h-dvh">
-      <AdminContactsGrid />
-      <ToggleSwitch />
+      <FestiveMenu />
+      <ProductList />
     </main>
   );
 }

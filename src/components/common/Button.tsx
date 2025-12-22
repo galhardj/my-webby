@@ -1,4 +1,4 @@
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/src/lib/mergeTailwind";
 import React from "react";
 
 interface Button {

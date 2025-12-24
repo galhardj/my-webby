@@ -1,6 +1,6 @@
-const ProductItem = ({ name, image, key }: any) => {
+const ProductItem = ({ name, image }: any) => {
   return (
-    <li className="rounded-2xl border-2" key={key}>
+    <li className="rounded-2xl border-2">
       <a href={`https://bulbapedia.bulbagarden.net/wiki/${name}_(Pokemon)`}>
         <img src={image} alt={name} className="pb-6" />
         <hr className="h-px bg-gray-400" />

@@ -11,7 +11,12 @@ const ProductList = ({ filteredList, itemLen }: ProductList) => {
     <ul className="grid grid-cols-5 gap-4">
       {filteredList.slice(0, itemLen).map((pokemon: any, index: number) => {
         return (
-          <ProductItem name={pokemon.name} image={pokemon.image} key={index} />
+          <ProductItem
+            name={pokemon.name}
+            image={pokemon.image}
+            type={pokemon.type}
+            key={index}
+          />
         );
       })}
     </ul>

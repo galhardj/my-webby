@@ -16,6 +16,7 @@ export default async function Page() {
       return {
         name: pokemonDetail.forms[0].name,
         image: pokemonDetail.sprites.other.home.front_default,
+        type: pokemonDetail.types.map((typeItem: any) => typeItem.type.name),
       };
     }),
   );

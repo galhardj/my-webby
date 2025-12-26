@@ -20,38 +20,43 @@ const ProductList = ({ pokemonList }: { pokemonList: any[] }) => {
     setItemLen(lengthDiff);
   };
 
-  const ButtonSection = () => {
-    return (
-      <>
-        {itemLen < filteredList.length ? (
-          <div className="flex gap-3">
-            <Button
-              className="rounded-2xl border bg-amber-300 px-6 py-3 text-gray-600"
-              onClick={() => setItemLen((prev) => prev + lengthDiff)}
-            >
-              Show more
-            </Button>
-            <Button
-              className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
-              onClick={() => setItemLen(pokemonList.length)}
-            >
-              Show all
-            </Button>
-          </div>
-        ) : filteredList.length > lengthDiff ? (
-          <Button
-            className="rounded-2xl border bg-blue-200 px-9 py-3 text-gray-600"
-            onClick={() => setItemLen(lengthDiff)}
-          >
-            Minimize
-          </Button>
-        ) : (
-          <></>
-        )}
-      </>
-    );
-  };
+  const ButtonExpand = () => (
+    <div className="flex gap-3">
+      <Button
+        className="rounded-2xl border bg-amber-300 px-6 py-3 text-gray-600"
+        onClick={() => setItemLen((prev) => prev + lengthDiff)}
+      >
+        Show more
+      </Button>
+      <Button
+        className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
+        onClick={() => setItemLen(pokemonList.length)}
+      >
+        Show all
+      </Button>
+    </div>
+  );
 
+  const ButtonCollapse = () => (
+    <Button
+      className="rounded-2xl border bg-blue-200 px-9 py-3 text-gray-600"
+      onClick={() => setItemLen(lengthDiff)}
+    >
+      Minimize
+    </Button>
+  );
+
+  const ButtonSection = () => (
+    <>
+      {itemLen < filteredList.length ? (
+        <ButtonExpand />
+      ) : filteredList.length > lengthDiff ? (
+        <ButtonCollapse />
+      ) : (
+        <></>
+      )}
+    </>
+  );
   return (
     <div className="mx-auto my-8 max-w-4xl">
       <div className="flex flex-col items-center gap-6">

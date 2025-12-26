@@ -1,7 +1,7 @@
 import { fetchApi } from "@/src/lib/fetchApi";
 import { SSR } from "@/src/constants/rendering-type";
-import FestiveMenu from "@/src/components/common/Products/ProductsClaude";
-import ProductList from "@/src/components/common/Products/ProductList";
+import FestiveMenu from "@/src/components/common/Products/claude/ProductsClaude";
+import ProductList from "@/src/components/common/Products/ProductSection";
 
 export default async function Page() {
   const { results: pokemonList }: { results: any[] } = await fetchApi<any>(

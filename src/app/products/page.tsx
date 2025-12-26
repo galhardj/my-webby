@@ -5,7 +5,7 @@ import ProductList from "@/src/components/common/Products/ProductList";
 
 export default async function Page() {
   const { results: pokemonList }: { results: any[] } = await fetchApi<any>(
-    "https://pokeapi.co/api/v2/pokemon/",
+    "https://pokeapi.co/api/v2/pokemon?limit=40",
     SSR,
   );
 

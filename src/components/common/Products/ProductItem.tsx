@@ -1,4 +1,4 @@
-import { cn } from "@/src/lib/mergeTailwind";
+import { cn } from "@/src/lib/utils/mergeTailwind";
 import { typeColor } from "@/src/constants/products";
 
 interface ProductItem {

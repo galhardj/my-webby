@@ -23,7 +23,6 @@ const ProductSection = ({ pokemonList, allCategories }: ProductSection) => {
   const filteredList = useMemo(
     () =>
       pokemonList.filter((pokemon) => {
-        console.log("MEMO")
         const meetFilter = pokemon.name
           .toLowerCase()
           .includes(searchQuery.toLowerCase());

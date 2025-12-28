@@ -16,7 +16,7 @@ interface pokemonList {
 }
 
 interface pokemonDetailApi {
-  forms: pokemonList[];
+  name: string;
   sprites: {
     other: {
       home: {

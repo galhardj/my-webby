@@ -18,7 +18,7 @@ export default async function Page() {
       const pokemonDetail = await fetchApi<pokemonDetailApi>(url, SSR);
 
       return {
-        name: pokemonDetail.forms[0].name,
+        name: pokemonDetail.name,
         image: pokemonDetail.sprites.other.home.front_default,
         type: pokemonDetail.types.map((typeItem: any) => typeItem.type.name),
       };

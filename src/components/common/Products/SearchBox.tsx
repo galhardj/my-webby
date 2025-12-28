@@ -1,11 +1,12 @@
 interface SearchBox {
-  onFilterChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  filterQuery: string;
+  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 // TODO: Consider moving SVG import from different file
-const SearchBox = ({ onFilterChange }: SearchBox) => {
+const SearchBox = ({ filterQuery, onSearch }: SearchBox) => {
   return (
-    <>
+    <div>
       <label htmlFor="filter-product" className="sr-only">
         Search for items
       </label>
@@ -14,8 +15,9 @@ const SearchBox = ({ onFilterChange }: SearchBox) => {
           id="filter-product"
           type="text"
           className="rounded-2xl border-2 px-12 py-6"
-          onChange={onFilterChange}
+          onChange={onSearch}
           placeholder="Search pokemon"
+          value={filterQuery}
         />
         <svg
           className="absolute top-1/2 left-4 h-6 w-6 -translate-y-1/2 transform text-gray-400"
@@ -32,7 +34,7 @@ const SearchBox = ({ onFilterChange }: SearchBox) => {
           />
         </svg>
       </div>
-    </>
+    </div>
   );
 };
 

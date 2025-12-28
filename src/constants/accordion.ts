@@ -1,3 +1,5 @@
+// TODO: export to be in the bottom, list out all the exported {methods, method, ...}
+
 export const ACCORDION_ITEMS = {
   title: "Frequently Asked Questions",
   accordions: [

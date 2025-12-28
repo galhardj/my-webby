@@ -1,4 +1,4 @@
-import { fetchApi } from "./fetchApi";
+import { fetchApi } from "./fetcher";
 import { Banner } from "@/src/type/contentful";
 import { SSG } from "@/src/constants/rendering-type";
 

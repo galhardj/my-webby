@@ -1,4 +1,4 @@
-import { fetchApi } from "@/src/lib/api/fetchApi";
+import { fetchApi } from "@/src/lib/api/fetcher";
 import { SSR } from "@/src/constants/rendering-type";
 import FestiveMenu from "@/src/components/common/Products/claude/ProductsClaude";
 import ProductList from "@/src/components/common/Products/ProductSection";

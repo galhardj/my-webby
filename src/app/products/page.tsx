@@ -1,4 +1,4 @@
-import { fetchApi } from "@/src/lib/fetchApi";
+import { fetchApi } from "@/src/lib/api/fetchApi";
 import { SSR } from "@/src/constants/rendering-type";
 import FestiveMenu from "@/src/components/common/Products/claude/ProductsClaude";
 import ProductList from "@/src/components/common/Products/ProductSection";
@@ -19,7 +19,7 @@ export default async function Page() {
 
       return {
         name: pokemonDetail.name,
-        image: pokemonDetail.sprites.other.home.front_default,
+        image: pokemonDetail.sprites.other["official-artwork"].front_default,
         type: pokemonDetail.types.map((typeItem: any) => typeItem.type.name),
       };
     }),

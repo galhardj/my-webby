@@ -1,3 +1,4 @@
+// TODO: Convert interfaces into PascalCase
 interface pokemonDetail {
   name: string;
   image: string;
@@ -19,7 +20,7 @@ interface pokemonDetailApi {
   name: string;
   sprites: {
     other: {
-      home: {
+      "official-artwork": {
         front_default: string;
       };
     };

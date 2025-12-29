@@ -1,6 +1,7 @@
 import { fetchApi } from "@/src/lib/api/fetcher";
 import { SSR } from "@/src/constants/rendering-type";
 import FestiveMenu from "@/src/components/common/Products/claude/ProductsClaude";
+import ProductHovered from "@/src/components/common/Products/claude/ProductHovered";
 import ProductList from "@/src/components/common/Products/ProductSection";
 import {
   pokeApi,
@@ -32,6 +33,7 @@ export default async function Page() {
   return (
     <main className="min-h-dvh">
       <FestiveMenu />
+      <ProductHovered />
       <ProductList
         pokemonList={pokemonDetailList}
         allCategories={allCategories}

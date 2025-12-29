@@ -1,4 +1,3 @@
-// TODO: Convert interfaces into PascalCase
 interface PokemonDetail {
   name: string;
   image: string;

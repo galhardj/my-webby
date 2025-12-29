@@ -9,7 +9,7 @@ export default async function Page() {
       <FestiveMenu />
       <ProductHovered />
       <ProductList
-        pokemonList={pokemonDetailList}
+        productList={pokemonDetailList}
         allCategories={allCategories}
       />
     </main>

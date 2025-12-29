@@ -6,14 +6,12 @@ import SearchBox from "./SearchBox";
 import SortItems from "./SortItems";
 import Button from "../Button";
 import { PokemonDetail } from "@/src/type/pokemon";
+import type { ProductSection } from "@/src/type/product";
 
-interface ProductSection {
-  pokemonList: PokemonDetail[];
-  allCategories: string[];
-}
-
-// TODO: to update types to not use 'any'
-const ProductSection = ({ pokemonList, allCategories }: ProductSection) => {
+const ProductSection = ({
+  productList,
+  allCategories,
+}: ProductSection<PokemonDetail>) => {
   const lengthDiff = 10;
   const [itemLen, setItemLen] = useState(lengthDiff);
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,12 +20,12 @@ const ProductSection = ({ pokemonList, allCategories }: ProductSection) => {
   // useMemo; avoid .filter recalculation when "setItemLen" is triggered
   const filteredList = useMemo(
     () =>
-      pokemonList.filter((pokemon) => {
-        const meetFilter = pokemon.name
+      productList.filter((product) => {
+        const meetFilter = product.name
           .toLowerCase()
           .includes(searchQuery.toLowerCase());
         const meetSort =
-          selectedCat === "" || pokemon.type.includes(selectedCat);
+          selectedCat === "" || product.type.includes(selectedCat);
         return meetFilter && meetSort;
       }),
     [searchQuery, selectedCat],
@@ -52,7 +50,7 @@ const ProductSection = ({ pokemonList, allCategories }: ProductSection) => {
       </Button>
       <Button
         className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
-        onClick={() => setItemLen(pokemonList.length)}
+        onClick={() => setItemLen(productList.length)}
       >
         Show all
       </Button>

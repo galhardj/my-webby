@@ -33,7 +33,7 @@ const ProductItem = ({ name, image, type: types }: ProductItem) => {
         <img src={image} alt={name} className="pb-6" />
         <ProductCategory />
         <hr className="h-px bg-gray-400" />
-        <p className="px-4 py-3 text-2xl font-bold text-gray-400">{name}</p>
+        <p className="px-4 py-3 text-2xl font-bold">{name}</p>
       </a>
     </li>
   );

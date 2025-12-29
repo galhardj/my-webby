@@ -6,7 +6,7 @@ import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { fetchContentful } from "@/src/lib/contentful";
+import { fetchContentful } from "@/src/lib/api/contentful";
 
 export default async function Page() {
   const contentfulBanner = await fetchContentful();

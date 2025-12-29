@@ -1,4 +1,4 @@
-export const fetchApi = async <T>(
+export const fetcher = async <T>(
   url: string,
   options: RequestInit,
 ): Promise<T> => {

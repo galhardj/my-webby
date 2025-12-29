@@ -1,22 +1,22 @@
 // TODO: Convert interfaces into PascalCase
-interface pokemonDetail {
+interface PokemonDetail {
   name: string;
   image: string;
   type: string[];
 }
 
-interface pokeApi {
+interface PokeApi {
   count: number;
   next: string;
   previous: any | null;
-  results: pokemonList[];
+  results: PokemonList[];
 }
-interface pokemonList {
+interface PokemonList {
   name: string;
   url: string;
 }
 
-interface pokemonDetailApi {
+interface PokemonDetailApi {
   name: string;
   sprites: {
     other: {
@@ -25,13 +25,13 @@ interface pokemonDetailApi {
       };
     };
   };
-  types: pokeType[];
+  types: PokeType[];
 }
 
-interface pokeType {
+interface PokeType {
   type: {
     name: string;
   };
 }
 
-export type { pokeApi, pokemonList, pokemonDetailApi, pokemonDetail };
+export type { PokeApi, PokemonList, PokemonDetailApi, PokemonDetail };

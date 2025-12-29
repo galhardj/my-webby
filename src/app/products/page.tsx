@@ -1,35 +1,9 @@
-import { fetchApi } from "@/src/lib/api/fetcher";
-import { SSR } from "@/src/constants/rendering-type";
 import FestiveMenu from "@/src/components/common/Products/claude/ProductsClaude";
 import ProductHovered from "@/src/components/common/Products/claude/ProductHovered";
 import ProductList from "@/src/components/common/Products/ProductSection";
-import {
-  pokeApi,
-  pokemonList,
-  pokemonDetailApi,
-  pokemonDetail,
-} from "@/src/type/pokemon";
+import { pokemonDetailList, allCategories } from "@/src/lib/domain/pokemon";
 
 export default async function Page() {
-  const { results: pokemonList }: { results: pokemonList[] } =
-    await fetchApi<pokeApi>("https://pokeapi.co/api/v2/pokemon?limit=130", SSR);
-
-  const pokemonDetailList: pokemonDetail[] = await Promise.all(
-    pokemonList.map(async ({ url }: pokemonList) => {
-      const pokemonDetail = await fetchApi<pokemonDetailApi>(url, SSR);
-
-      return {
-        name: pokemonDetail.name,
-        image: pokemonDetail.sprites.other["official-artwork"].front_default,
-        type: pokemonDetail.types.map((typeItem: any) => typeItem.type.name),
-      };
-    }),
-  );
-
-  const allCategories: string[] = Array.from(
-    new Set(pokemonDetailList.map((pokemon) => pokemon.type).flat()),
-  );
-
   return (
     <main className="min-h-dvh">
       <FestiveMenu />

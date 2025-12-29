@@ -5,10 +5,10 @@ import ProductList from "./ProductList";
 import SearchBox from "./SearchBox";
 import SortItems from "./SortItems";
 import Button from "../Button";
-import { pokemonDetail } from "@/src/type/pokemon";
+import { PokemonDetail } from "@/src/type/pokemon";
 
 interface ProductSection {
-  pokemonList: pokemonDetail[];
+  pokemonList: PokemonDetail[];
   allCategories: string[];
 }
 

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { PokemonDetail } from "@/src/type/pokemon";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
@@ -25,45 +27,66 @@ const images = [
   },
 ];
 
-const ProductDetail = () => {
+const ProductDetail = ({ product }: { product: any }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+
+  console.log("YUP", product);
 
   const slidehandler = (nav: "next" | "prev") => () => {
     setSlideIndex((prev) => {
       if (nav === "next") {
-        return prev === images.length - 1 ? 0 : prev + 1;
+        return prev === product.gifs.length - 1 ? 0 : prev + 1;
       } else {
-        return prev === 0 ? images.length - 1 : prev - 1;
+        return prev === 0 ? product.gifs.length - 1 : prev - 1;
       }
     });
   };
 
   return (
     <section className="mx-auto my-8 max-w-4xl">
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-20">
         <div className="relative aspect-square flex-1">
           <img
-            src={images[slideIndex].src}
+            src={product.gifs[slideIndex]}
             alt={images[slideIndex].alt}
-            className="h-full w-full object-cover"
+            className="h-96 w-full rounded-sm object-contain"
           />
 
           <button
-            className="absolute top-1/2 right-3 rounded-full bg-white/50 p-3 hover:scale-110"
+            className="absolute top-1/2 right-3 rounded-full bg-gray-200/50 p-3 hover:scale-110"
             onClick={slidehandler("next")}
           >
-            Next
+            <ChevronRight />
           </button>
           <button
-            className="absolute top-1/2 left-3 rounded-full bg-white/50 p-3 hover:scale-110"
+            className="absolute top-1/2 left-3 rounded-full bg-gray-200/50 p-3 hover:scale-110"
             onClick={slidehandler("prev")}
           >
-            Prev
+            <ChevronLeft />
           </button>
         </div>
         <div className="flex-1">
-          <h2>Product details</h2>
-          <p>Product details description</p>
+          <h2>{product.name}</h2>
+          <br />
+          <div className="flex gap-15">
+            <div>
+              <h3>Ability</h3>
+              <ul className="list-disc pl-4">
+                {product.abilities.map((ability: string) => (
+                  <li>{ability}</li>
+                ))}
+              </ul>
+              <br />
+            </div>
+            <div>
+              <h3>Move</h3>
+              <ul className="list-disc pl-4">
+                {product.moves.map((move: string) => (
+                  <li>{move}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

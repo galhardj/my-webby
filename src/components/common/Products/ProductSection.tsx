@@ -5,6 +5,7 @@ import ProductList from "./ProductList";
 import SearchBox from "./SearchBox";
 import SortItems from "./SortItems";
 import Button from "../Button";
+import ProductDetail from "./ProductDetail";
 import { PokemonDetail } from "@/src/type/pokemon";
 import type { ProductSection } from "@/src/type/product";
 
@@ -95,6 +96,9 @@ const ProductSection = ({
         </div>
         <ProductList filteredList={filteredList} itemLen={itemLen} />
         <ButtonSection />
+        <ProductDetail
+          product={productList.find((product) => product.name === "diglett")}
+        />
       </div>
     </div>
   );

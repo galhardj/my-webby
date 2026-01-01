@@ -2,6 +2,9 @@ interface PokemonDetail {
   name: string;
   image: string;
   type: string[];
+  gifs: any[];
+  moves: any[];
+  abilities: any[];
 }
 
 interface PokeApi {
@@ -22,9 +25,12 @@ interface PokemonDetailApi {
       "official-artwork": {
         front_default: string;
       };
+      [key: string]: any;
     };
   };
   types: PokeType[];
+  moves: any[];
+  abilities: any[];
 }
 
 interface PokeType {

@@ -15,6 +15,13 @@ const pokemonDetailList: PokemonDetail[] = await Promise.all(
       name: pokemonDetail.name,
       image: pokemonDetail.sprites.other["official-artwork"].front_default,
       type: pokemonDetail.types.map((typeItem: any) => typeItem.type.name),
+      gifs: Object.values(pokemonDetail.sprites.other.showdown).filter(
+        (n) => n,
+      ),
+      moves: pokemonDetail.moves.slice(0, 4).map((move) => move.move.name),
+      abilities: pokemonDetail.abilities
+        .slice(0, 4)
+        .map((ability) => ability.ability.name),
     };
   }),
 );

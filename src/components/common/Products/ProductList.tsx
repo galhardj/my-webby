@@ -1,12 +1,13 @@
 import ProductItem from "./ProductItem";
-import { memo } from "react";
+import { memo, Dispatch } from "react";
 
 interface ProductList {
   filteredList: any[];
   itemLen: number;
+  onSelectItem: Dispatch<string>;
 }
 
-const ProductList = ({ filteredList, itemLen }: ProductList) => {
+const ProductList = ({ filteredList, itemLen, onSelectItem }: ProductList) => {
   return (
     <div className="flex flex-col items-end gap-3 text-gray-400">
       <p className="pr-2 text-xl font-bold">Count: {filteredList.length}</p>
@@ -18,6 +19,7 @@ const ProductList = ({ filteredList, itemLen }: ProductList) => {
               image={pokemon.image}
               type={pokemon.type}
               key={index}
+              onSelectItem={onSelectItem}
             />
           );
         })}

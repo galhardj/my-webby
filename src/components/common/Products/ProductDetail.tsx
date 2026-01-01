@@ -30,8 +30,6 @@ const images = [
 const ProductDetail = ({ product }: { product: any }) => {
   const [slideIndex, setSlideIndex] = useState(0);
 
-  console.log("YUP", product);
-
   const slidehandler = (nav: "next" | "prev") => () => {
     setSlideIndex((prev) => {
       if (nav === "next") {
@@ -40,6 +38,19 @@ const ProductDetail = ({ product }: { product: any }) => {
         return prev === 0 ? product.gifs.length - 1 : prev - 1;
       }
     });
+  };
+
+  const DetailList = ({ section }: { section: "Abilities" | "Moves" }) => {
+    return (
+      <div>
+        <h3>{section}</h3>
+        <ul className="list-disc pl-4">
+          {product[section.toLowerCase()].map((item: string, index: number) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    );
   };
 
   return (
@@ -65,28 +76,20 @@ const ProductDetail = ({ product }: { product: any }) => {
             <ChevronLeft />
           </button>
         </div>
-        <div className="flex-1">
+        <div className="flex flex-1 flex-col items-start gap-6">
           <h2>{product.name}</h2>
-          <br />
+
           <div className="flex gap-15">
-            <div>
-              <h3>Ability</h3>
-              <ul className="list-disc pl-4">
-                {product.abilities.map((ability: string) => (
-                  <li>{ability}</li>
-                ))}
-              </ul>
-              <br />
-            </div>
-            <div>
-              <h3>Move</h3>
-              <ul className="list-disc pl-4">
-                {product.moves.map((move: string) => (
-                  <li>{move}</li>
-                ))}
-              </ul>
-            </div>
+            <DetailList section="Abilities" />
+            <DetailList section="Moves" />
           </div>
+
+          <a
+            href={`https://bulbapedia.bulbagarden.net/wiki/${product.name}_(Pokemon)`}
+            className="rounded-xl border-2 bg-green-200 px-7 py-3"
+          >
+            Bulbapedia
+          </a>
         </div>
       </div>
     </section>

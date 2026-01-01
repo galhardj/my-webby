@@ -17,6 +17,7 @@ const ProductSection = ({
   const [itemLen, setItemLen] = useState(lengthDiff);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCat, setCategory] = useState("");
+  const [activeProduct, setProduct] = useState("");
 
   // useMemo; avoid .filter recalculation when "setItemLen" is triggered
   const filteredList = useMemo(
@@ -94,11 +95,19 @@ const ProductSection = ({
             allCategories={allCategories}
           />
         </div>
-        <ProductList filteredList={filteredList} itemLen={itemLen} />
-        <ButtonSection />
-        <ProductDetail
-          product={productList.find((product) => product.name === "diglett")}
+        <ProductList
+          filteredList={filteredList}
+          itemLen={itemLen}
+          onSelectItem={setProduct}
         />
+        <ButtonSection />
+        {activeProduct && (
+          <ProductDetail
+            product={productList.find(
+              (product) => product.name === activeProduct,
+            )}
+          />
+        )}
       </div>
     </div>
   );

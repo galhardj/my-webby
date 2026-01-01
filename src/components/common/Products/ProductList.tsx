@@ -9,7 +9,7 @@ interface ProductList {
 const ProductList = ({ filteredList, itemLen }: ProductList) => {
   return (
     <div className="flex flex-col items-end gap-3 text-gray-400">
-      <p className="pr-2 text-xl font-bold">Items: {filteredList.length}</p>
+      <p className="pr-2 text-xl font-bold">Count: {filteredList.length}</p>
       <ul className="grid grid-cols-5 gap-4">
         {filteredList.slice(0, itemLen).map((pokemon: any, index: number) => {
           return (

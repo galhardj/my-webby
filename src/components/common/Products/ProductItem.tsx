@@ -14,7 +14,7 @@ const ProductItem = ({ name, image, type: types }: ProductItem) => {
         <li
           key={index}
           className={cn(
-            "min-w-18 rounded-xl border-2 py-0.5 text-center",
+            "min-w-18 rounded-xl border-2 py-0.5 text-center text-gray-500",
             typeColor[type] ?? "bg-white",
           )}
         >

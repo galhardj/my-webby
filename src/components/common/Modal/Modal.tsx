@@ -45,9 +45,15 @@ const ModalSection = () => {
         Trigger modal
       </Button>
       {modalOpen && (
-        <div onClick={setModal} className="fixed inset-0 z-30 bg-black/50">
-          <div className="fixed inset-0 z-40 flex items-center justify-center">
-            <div className="flex max-w-md flex-col gap-4 rounded-lg border bg-white px-8 py-4">
+        <div className="fixed inset-0 z-30 bg-black/50">
+          <div
+            onClick={setModal}
+            className="fixed inset-0 z-40 flex items-center justify-center"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="flex max-w-md flex-col gap-4 rounded-lg border bg-white px-8 py-4"
+            >
               <h2>Modal Title</h2>
               <p>
                 This modal automatically receives focus when opened. Press the

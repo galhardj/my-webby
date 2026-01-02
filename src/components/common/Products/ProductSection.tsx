@@ -106,6 +106,7 @@ const ProductSection = ({
             product={productList.find(
               (product) => product.name === activeProduct,
             )}
+            onCloseModal={setProduct}
           />
         )}
       </div>

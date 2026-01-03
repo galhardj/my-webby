@@ -1,22 +1,19 @@
-import { cn } from "@/src/lib/utils/mergeTailwind";
 import React from "react";
+import { cn } from "@/src/lib/utils/mergeTailwind";
 
-interface Button {
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-}
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = React.forwardRef<HTMLButtonElement, Button>(
-  ({ children, className, onClick }, ref) => {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ type = "button", className, children, ...props }, ref) => {
     return (
       <button
         className={cn(
-          "rounded-lg border-2 bg-indigo-600 px-6 py-3 font-medium text-white focus:border-4 focus:border-red-500",
+          "rounded-lg border-2 bg-white/50 px-6 py-3 font-medium text-white",
           className,
         )}
-        onClick={onClick}
         ref={ref}
+        type={type}
+        {...props}
       >
         {children}
       </button>

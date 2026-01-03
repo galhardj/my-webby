@@ -2,9 +2,9 @@ interface PokemonDetail {
   name: string;
   image: string;
   type: string[];
-  gifs: any[];
-  moves: any[];
-  abilities: any[];
+  gifs: string[];
+  moves: string[];
+  abilities: string[];
 }
 
 interface PokeApi {
@@ -29,8 +29,18 @@ interface PokemonDetailApi {
     };
   };
   types: PokeType[];
-  moves: any[];
-  abilities: any[];
+  moves: pokemonMove[];
+  abilities: pokemonAbility[];
+}
+
+interface pokemonMove {
+  move: {
+    name: string;
+  };
+}
+
+interface pokemonAbility {
+  ability: { name: string };
 }
 
 interface PokeType {
@@ -39,4 +49,4 @@ interface PokeType {
   };
 }
 
-export type { PokeApi, PokemonList, PokemonDetailApi, PokemonDetail };
+export type { PokeApi, PokemonList, PokemonDetailApi, PokemonDetail, PokeType };

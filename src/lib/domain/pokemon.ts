@@ -3,6 +3,7 @@ import { SSR } from "@/src/constants/rendering-type";
 import {
   PokemonList,
   PokemonDetailApi,
+  PokeType,
   PokemonDetail,
 } from "@/src/type/pokemon";
 import { pokemonList } from "@/src/lib/api/pokemon";
@@ -14,9 +15,9 @@ const pokemonDetailList: PokemonDetail[] = await Promise.all(
     return {
       name: pokemonDetail.name,
       image: pokemonDetail.sprites.other["official-artwork"].front_default,
-      type: pokemonDetail.types.map((typeItem: any) => typeItem.type.name),
+      type: pokemonDetail.types.map((typeItem: PokeType) => typeItem.type.name),
       gifs: Object.values(pokemonDetail.sprites.other.showdown).filter(
-        (n) => n,
+        (gif): gif is string => Boolean(gif),
       ),
       moves: pokemonDetail.moves.slice(0, 4).map((move) => move.move.name),
       abilities: pokemonDetail.abilities
@@ -26,7 +27,7 @@ const pokemonDetailList: PokemonDetail[] = await Promise.all(
   }),
 );
 
-const allCategories: string[] = Array.from(
+const allCategories = Array.from(
   new Set(pokemonDetailList.map((pokemon) => pokemon.type).flat()),
 );
 

@@ -19,6 +19,10 @@ const ProductSection = ({
   const [selectedCat, setCategory] = useState("");
   const [activeProduct, setProduct] = useState("");
 
+  const detailedProduct = productList.find(
+    (product) => product.name === activeProduct,
+  );
+
   // useMemo; avoid .filter recalculation when "setItemLen" is triggered
   const filteredList = useMemo(
     () =>
@@ -101,13 +105,8 @@ const ProductSection = ({
           onSelectItem={setProduct}
         />
         <ButtonSection />
-        {activeProduct && (
-          <ProductDetail
-            product={productList.find(
-              (product) => product.name === activeProduct,
-            )}
-            onCloseModal={setProduct}
-          />
+        {detailedProduct && (
+          <ProductDetail product={detailedProduct} onCloseModal={setProduct} />
         )}
       </div>
     </div>

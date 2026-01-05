@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "../Button";
+import Link from "../Link";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { typeColor } from "@/src/constants/products";
@@ -84,14 +85,12 @@ const ProductDetail = ({
             <DetailList title="Moves" list={product.moves} />
           </div>
 
-          <a
-            href={`https://bulbapedia.bulbagarden.net/wiki/${product.name}_(Pokemon)`}
-            className="text-md mt-3 rounded-xl bg-gray-600 px-7 py-3 font-medium text-gray-200"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            url={`https://bulbapedia.bulbagarden.net/wiki/${product.name}_(Pokemon)`}
+            style="button"
           >
             Bulbapedia
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -43,10 +43,8 @@ const AppLink = ({ url, style, children }: AppLink) => {
     );
   } else {
     const internalSlug = url.startsWith(hostOrigin)
-      ? url.slice(hostOrigin.length) //get slug, e.g., "/products"
-      : url.startsWith("/") //add slash
-        ? url
-        : `/${url}`;
+      ? url.slice(hostOrigin.length) //get slug "/products"
+      : `${url.startsWith("/") ? "" : "/"}` + `${url}`;
 
     return (
       <Link href={internalSlug} className={linkStyle[style]}>

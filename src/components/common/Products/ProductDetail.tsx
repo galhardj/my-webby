@@ -2,6 +2,7 @@
 
 import Button from "../Button";
 import Link from "../Link";
+import Image from "../Image";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { typeColor } from "@/src/constants/products";
@@ -52,7 +53,7 @@ const ProductDetail = ({
         className="flex h-max w-3xl items-center gap-20 rounded-2xl border-6 border-gray-400 bg-gray-50 p-10"
       >
         <figure className="relative flex aspect-square flex-1 items-center">
-          <img
+          <Image
             src={product.gifs[slideIndex]}
             alt={product.name}
             className="h-56 w-full rounded-sm object-contain"

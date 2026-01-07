@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "../Image";
 import { cn } from "@/src/lib/utils/mergeTailwind";
 import { typeColor } from "@/src/constants/products";
 import { Dispatch } from "react";
@@ -18,8 +19,8 @@ const ProductItem = ({
   onSelectItem: selecthandler,
 }: ProductItem) => {
   const ProductCategory = () => (
-    <ul className="ml-1 flex gap-1">
-      {types.map((type, index) => (
+    <ul className="ml-2 flex gap-2">
+      {types.slice(0, 2).map((type, index) => (
         <li
           key={index}
           className={cn(
@@ -34,15 +35,16 @@ const ProductItem = ({
   );
 
   return (
-    <li className="rounded-2xl border-2">
+    <li className="overflow-hidden rounded-2xl border-2 border-gray-200">
       <button
-        className="flex flex-col gap-2"
+        className="flex w-full flex-col gap-3"
         onClick={() => selecthandler(name)}
       >
-        <img src={image} alt={name} className="pb-6" />
+        <div className="relative h-56 w-full">
+          <Image src={image} alt={name} className="object-contain" />
+        </div>
         <ProductCategory />
-        <hr className="h-px bg-gray-400" />
-        <p className="px-4 py-3 text-2xl font-bold">{name}</p>
+        <p className="border-t-2 py-2 text-2xl font-bold">{name}</p>
       </button>
     </li>
   );

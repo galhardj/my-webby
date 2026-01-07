@@ -11,11 +11,11 @@ export default async function Page() {
       <FestiveMenu />
       <ProductHovered />
       <CarouselSlide />
-      <BannerClaude />
       <ProductList
         productList={pokemonDetailList}
         allCategories={allCategories}
       />
+      <BannerClaude />
     </main>
   );
 }

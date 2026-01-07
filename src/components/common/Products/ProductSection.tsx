@@ -49,13 +49,13 @@ const ProductSection = ({
   const ButtonExpand = () => (
     <div className="flex gap-3">
       <Button
-        className="rounded-2xl border bg-amber-300 px-6 py-3 text-gray-600"
+        className="px-6 py-3 text-gray-600 border rounded-2xl bg-amber-300"
         onClick={() => setItemLen((prev) => prev + lengthDiff)}
       >
         Show more
       </Button>
       <Button
-        className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
+        className="py-3 text-gray-600 border rounded-2xl bg-amber-400 px-9"
         onClick={() => setItemLen(productList.length)}
       >
         Show all
@@ -66,7 +66,7 @@ const ProductSection = ({
 
   const ButtonCollapse = () => (
     <Button
-      className="rounded-2xl border bg-blue-200 px-9 py-3 text-gray-600"
+      className="py-3 text-gray-600 bg-blue-200 border rounded-2xl px-9"
       onClick={() => setItemLen(lengthDiff)}
     >
       Minimize
@@ -86,9 +86,9 @@ const ProductSection = ({
   );
 
   return (
-    <div className="mx-auto my-8 max-w-4xl">
-      <div className="flex flex-col items-center gap-6">
-        <div className="flex gap-8">
+    <div className="w-full px-4 my-8 sm:px-6 lg:px-10">
+      <div className="flex flex-col items-center gap-6 mx-auto max-w-7xl">
+        <div className="flex flex-col gap-8 text-md md:flex-row">
           <SearchBox
             filterQuery={searchQuery}
             onSearch={changeHandler<HTMLInputElement>(setSearchQuery)}

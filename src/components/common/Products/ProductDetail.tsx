@@ -44,6 +44,7 @@ const ProductDetail = ({
   };
 
   return (
+    // TODO: modal in other brakpoints
     <section
       onClick={() => closeModalHandler("")}
       className="fixed inset-0 flex items-center justify-center bg-black/50"

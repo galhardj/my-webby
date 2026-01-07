@@ -1,7 +1,12 @@
 import Image, { ImageProps } from "next/image";
 
-const AppImage = ({ ...props }: ImageProps) => {
-  return <Image {...props} fill />;
+type AppImage = Omit<ImageProps, "src"> & {
+  src: string;
+};
+
+// TODO: consider; div wrapping, 'sizes' att
+const AppImage = ({ ...props }: AppImage) => {
+  return <Image fill unoptimized={props.src.endsWith(".gif")} {...props} />;
 };
 
 export default AppImage;

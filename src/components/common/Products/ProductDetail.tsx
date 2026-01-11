@@ -33,8 +33,8 @@ const ProductDetail = ({
   const DetailList = ({ title, list }: { title: string; list: string[] }) => {
     return (
       <div>
-        <h3>{title}</h3>
-        <ul className="list-disc pl-4">
+        <h3 className="text-lg font-semibold md:text-xl">{title}</h3>
+        <ul className="list-disc pl-4 text-sm md:text-base">
           {list.map((item: string, index: number) => (
             <li key={index}>{item}</li>
           ))}
@@ -53,7 +53,7 @@ const ProductDetail = ({
         onClick={(e) => e.stopPropagation()}
         className="my-auto flex h-max w-full max-w-3xl flex-col items-center gap-20 rounded-2xl border-6 border-gray-400 bg-gray-50 p-10 md:flex-row"
       >
-        <figure className="relative flex aspect-square flex-1 items-center">
+        <figure className="relative flex aspect-square w-3/4 flex-1 items-center md:w-auto">
           <Image
             src={product.gifs[slideIndex]}
             alt={product.name}
@@ -73,26 +73,28 @@ const ProductDetail = ({
           </Button>
         </figure>
         <div
-          className={`flex flex-1 flex-col items-start gap-7 rounded-xl p-10 ${typeColor[product.type[0]]}`}
+          className={`flex w-full flex-1 flex-col items-center rounded-xl p-6 ${typeColor[product.type[0]]} md:p-10`}
         >
-          <div>
-            <h2 className="font-bold">
-              {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
-            </h2>
-            <hr className="h-1 w-full bg-gray-600" />
-          </div>
+          <div className="flex flex-col items-start gap-5 md:gap-7">
+            <div>
+              <h2 className="text-2xl font-bold md:text-3xl">
+                {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
+              </h2>
+              <hr className="h-1 w-full bg-gray-600" />
+            </div>
 
-          <div className="flex gap-5 md:gap-15">
-            <DetailList title="Abilities" list={product.abilities} />
-            <DetailList title="Moves" list={product.moves} />
-          </div>
+            <div className="flex gap-5 md:gap-15">
+              <DetailList title="Abilities" list={product.abilities} />
+              <DetailList title="Moves" list={product.moves} />
+            </div>
 
-          <Link
-            url={`https://bulbapedia.bulbagarden.net/wiki/${product.name}_(Pokemon)`}
-            style="button"
-          >
-            Bulbapedia
-          </Link>
+            <Link
+              url={`https://bulbapedia.bulbagarden.net/wiki/${product.name}_(Pokemon)`}
+              style="button"
+            >
+              Bulbapedia
+            </Link>
+          </div>
         </div>
       </div>
     </section>

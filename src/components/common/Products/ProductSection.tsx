@@ -9,6 +9,7 @@ import ProductDetail from "./ProductDetail";
 import { PokemonDetail } from "@/src/type/pokemon";
 import type { ProductSection } from "@/src/type/product";
 
+// TODO: see if MediaQuery should be implemented
 const ProductSection = ({
   productList,
   allCategories,

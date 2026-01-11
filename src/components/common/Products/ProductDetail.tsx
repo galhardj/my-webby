@@ -47,17 +47,17 @@ const ProductDetail = ({
     // TODO: modal in other brakpoints
     <section
       onClick={() => closeModalHandler("")}
-      className="fixed inset-0 flex items-center justify-center bg-black/50"
+      className="fixed inset-0 flex items-center justify-center overflow-y-auto bg-black/50 p-4 md:p-8"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="flex h-max w-3xl items-center gap-20 rounded-2xl border-6 border-gray-400 bg-gray-50 p-10"
+        className="my-auto flex h-max w-full max-w-3xl flex-col items-center gap-20 rounded-2xl border-6 border-gray-400 bg-gray-50 p-10 md:flex-row"
       >
         <figure className="relative flex aspect-square flex-1 items-center">
           <Image
             src={product.gifs[slideIndex]}
             alt={product.name}
-            className="h-56 w-full rounded-sm object-contain"
+            className="h-full w-full rounded-sm object-contain"
           />
           <Button
             className="absolute top-1/2 left-0.5 rounded-full bg-gray-200/50 p-3 hover:scale-110"
@@ -82,7 +82,7 @@ const ProductDetail = ({
             <hr className="h-1 w-full bg-gray-600" />
           </div>
 
-          <div className="flex gap-15">
+          <div className="flex gap-5 md:gap-15">
             <DetailList title="Abilities" list={product.abilities} />
             <DetailList title="Moves" list={product.moves} />
           </div>

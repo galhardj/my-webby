@@ -44,7 +44,9 @@ const ProductItem = ({
           <Image src={image} alt={name} className="object-contain" />
         </div>
         <ProductCategory />
-        <p className="border-t-2 py-2 text-2xl font-bold">{name}</p>
+        <p className="w-full border-t-2 py-2 text-center text-2xl font-bold">
+          {name}
+        </p>
       </button>
     </li>
   );

@@ -8,6 +8,7 @@ import {
 } from "@/src/type/pokemon";
 import { pokemonList } from "@/src/lib/api/pokemon";
 
+// TODO: to make below as function instead for testing purpose
 const pokemonDetailList: PokemonDetail[] = await Promise.all(
   pokemonList.map(async ({ url }: PokemonList) => {
     const pokemonDetail = await fetcher<PokemonDetailApi>(url, SSR);

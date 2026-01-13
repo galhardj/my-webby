@@ -1,3 +1,5 @@
+// TODO: Check this out for best practice sample; https://dev.to/dmitrevnik/fetch-wrapper-for-nextjs-a-deep-dive-into-best-practices-53dh
+
 export const fetcher = async <T>(
   url: string,
   options: RequestInit,

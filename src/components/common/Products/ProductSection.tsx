@@ -9,7 +9,8 @@ import ProductDetail from "./ProductDetail";
 import { PokemonDetail } from "@/src/type/pokemon";
 import type { ProductSection } from "@/src/type/product";
 
-// TODO: see if MediaQuery should be implemented
+//TODO: see if MediaQuery should be implemented; https://www.linkedin.com/pulse/why-you-should-stop-using-media-queries-nextjs-felipe-rocha-82e8f
+//TODO: https://stackoverflow.com/questions/76732951/how-do-i-use-media-queries-in-the-next-js-app-router
 const ProductSection = ({
   productList,
   allCategories,
@@ -50,13 +51,13 @@ const ProductSection = ({
   const ButtonExpand = () => (
     <div className="flex gap-3">
       <Button
-        className="px-6 py-3 text-gray-600 border rounded-2xl bg-amber-300"
+        className="rounded-2xl border bg-amber-300 px-6 py-3 text-gray-600"
         onClick={() => setItemLen((prev) => prev + lengthDiff)}
       >
         Show more
       </Button>
       <Button
-        className="py-3 text-gray-600 border rounded-2xl bg-amber-400 px-9"
+        className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
         onClick={() => setItemLen(productList.length)}
       >
         Show all
@@ -67,7 +68,7 @@ const ProductSection = ({
 
   const ButtonCollapse = () => (
     <Button
-      className="py-3 text-gray-600 bg-blue-200 border rounded-2xl px-9"
+      className="rounded-2xl border bg-blue-200 px-9 py-3 text-gray-600"
       onClick={() => setItemLen(lengthDiff)}
     >
       Minimize
@@ -86,10 +87,11 @@ const ProductSection = ({
     </>
   );
 
+  // TODO: adding the reset button for product.filter; SearchBox, SortItems
   return (
-    <div className="w-full px-4 my-8 sm:px-6 lg:px-10">
-      <div className="flex flex-col items-center gap-6 mx-auto max-w-7xl">
-        <div className="flex flex-col gap-8 text-md md:flex-row">
+    <div className="my-8 w-full px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6">
+        <div className="text-md flex flex-col gap-8 md:flex-row">
           <SearchBox
             filterQuery={searchQuery}
             onSearch={changeHandler<HTMLInputElement>(setSearchQuery)}

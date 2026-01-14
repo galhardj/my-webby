@@ -1,3 +1,4 @@
 /node_modules
 /.next/
 src/components/css-framework/shadcn/ui/*
+coverage/

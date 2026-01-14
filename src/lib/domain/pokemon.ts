@@ -1,3 +1,7 @@
+// 💡
+// API responses change
+// your domain model should not
+
 import { fetcher } from "@/src/lib/api/fetcher";
 import { SSR } from "@/src/constants/rendering-type";
 import {

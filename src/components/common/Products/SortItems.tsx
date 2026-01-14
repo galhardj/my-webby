@@ -18,6 +18,7 @@ const SortItems = ({ selectedCat, onSorting, allCategories }: SortItems) => {
           className="appearance-none rounded-2xl border-2 bg-white py-6 pr-12 pl-6 text-gray-400"
           value={selectedCat}
           onChange={onSorting}
+          data-testid="category-product"
         >
           <option value="">Sort by Category</option>
           {allCategories.map((category) => (

@@ -54,12 +54,14 @@ const ProductSection = ({
       <Button
         className="rounded-2xl border bg-amber-300 px-6 py-3 text-gray-600"
         onClick={() => setItemLen((prev) => prev + lengthDiff)}
+        data-testid="show-more-products"
       >
         Show more
       </Button>
       <Button
         className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
         onClick={() => setItemLen(productList.length)}
+        data-testid="show-all-products"
       >
         Show all
       </Button>
@@ -71,6 +73,7 @@ const ProductSection = ({
     <Button
       className="rounded-2xl border bg-blue-200 px-9 py-3 text-gray-600"
       onClick={() => setItemLen(lengthDiff)}
+      data-testid="minimize-product-list"
     >
       Minimize
     </Button>
@@ -108,18 +111,20 @@ const ProductSection = ({
   return (
     <div className="my-8 w-full px-4 sm:px-6 lg:px-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 xl:w-5xl">
-        <div className="text-md flex w-full flex-col gap-8 overflow-hidden rounded-xl border-2 bg-green-500/50 p-6 md:flex-row">
-          <SearchBox
-            filterQuery={searchQuery}
-            onSearch={changeHandler<HTMLInputElement>(setSearchQuery)}
-          />
-          <div className="flex items-center gap-8">
-            <SortItems
-              selectedCat={selectedCat}
-              onSorting={changeHandler<HTMLSelectElement>(setCategory)}
-              allCategories={allCategories}
+        <div className="text-md flex w-full justify-center overflow-hidden rounded-xl border-2 bg-green-500/50 p-6">
+          <div className="flex flex-col gap-8 md:flex-row">
+            <SearchBox
+              filterQuery={searchQuery}
+              onSearch={changeHandler<HTMLInputElement>(setSearchQuery)}
             />
-            <ResetButton />
+            <div className="flex items-center gap-8">
+              <SortItems
+                selectedCat={selectedCat}
+                onSorting={changeHandler<HTMLSelectElement>(setCategory)}
+                allCategories={allCategories}
+              />
+              <ResetButton />
+            </div>
           </div>
         </div>
         <ProductList

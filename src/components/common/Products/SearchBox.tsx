@@ -18,6 +18,7 @@ const SearchBox = ({ filterQuery, onSearch }: SearchBox) => {
           className="rounded-2xl border-2 bg-white px-12 py-6 text-gray-700"
           onChange={onSearch}
           placeholder="Search pokemon"
+          data-testid="filter-product"
           value={filterQuery}
         />
         <Magnifier />

@@ -6,7 +6,7 @@ interface SortItems {
 
 const ChevronDownSVG = () => (
   <svg
-    className="absolute w-5 h-5 text-gray-400 transform -translate-y-1/2 pointer-events-none top-1/2 right-4"
+    className="pointer-events-none absolute top-1/2 right-4 h-5 w-5 -translate-y-1/2 transform text-gray-400"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ const SortItems = ({ selectedCat, onSorting, allCategories }: SortItems) => {
       <div className="relative">
         <select
           id="category-product"
-          className="w-full py-6 text-gray-400 border-2 appearance-none rounded-2xl px-14"
+          className="appearance-none rounded-2xl border-2 bg-white py-6 pr-12 pl-6 text-gray-400"
           value={selectedCat}
           onChange={onSorting}
         >

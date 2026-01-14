@@ -7,6 +7,7 @@ import SortItems from "./SortItems";
 import Button from "../Button";
 import ProductDetail from "./ProductDetail";
 import { PokemonDetail } from "@/src/type/pokemon";
+import { CloseIcon } from "@/src/components/icons/CloseIcon";
 import type { ProductSection } from "@/src/type/product";
 
 //TODO: see if MediaQuery should be implemented; https://www.linkedin.com/pulse/why-you-should-stop-using-media-queries-nextjs-felipe-rocha-82e8f
@@ -87,11 +88,27 @@ const ProductSection = ({
     </>
   );
 
+  const ResetButton = () => {
+    return (
+      <Button
+        onClick={() => {
+          setSearchQuery("");
+          setCategory("");
+          setItemLen(lengthDiff);
+        }}
+        className="flex h-9 w-9 items-center justify-center rounded-full bg-red-100 p-1 transition-colors hover:bg-red-200"
+        aria-label="Clear filters"
+      >
+        <CloseIcon className="h-6 w-6 text-red-500" />
+      </Button>
+    );
+  };
+
   // TODO: adding the reset button for product.filter; SearchBox, SortItems
   return (
     <div className="my-8 w-full px-4 sm:px-6 lg:px-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6">
-        <div className="text-md flex flex-col gap-8 md:flex-row">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 xl:w-5xl">
+        <div className="text-md flex w-full flex-col items-center gap-8 rounded-xl border-2 bg-green-500/50 p-6 md:flex-row">
           <SearchBox
             filterQuery={searchQuery}
             onSearch={changeHandler<HTMLInputElement>(setSearchQuery)}
@@ -101,6 +118,7 @@ const ProductSection = ({
             onSorting={changeHandler<HTMLSelectElement>(setCategory)}
             allCategories={allCategories}
           />
+          <ResetButton />
         </div>
         <ProductList
           filteredList={filteredList}

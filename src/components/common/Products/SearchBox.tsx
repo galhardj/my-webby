@@ -5,7 +5,7 @@ interface SearchBox {
 
 const MagnifierSVG = () => (
   <svg
-    className="absolute w-6 h-6 text-gray-400 transform -translate-y-1/2 top-1/2 left-4"
+    className="absolute top-1/2 left-4 h-6 w-6 -translate-y-1/2 transform text-gray-400"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ const SearchBox = ({ filterQuery, onSearch }: SearchBox) => {
         <input
           id="filter-product"
           type="text"
-          className="px-12 py-6 text-gray-700 border-2 rounded-2xl"
+          className="rounded-2xl border-2 bg-white px-12 py-6 text-gray-700"
           onChange={onSearch}
           placeholder="Search pokemon"
           value={filterQuery}

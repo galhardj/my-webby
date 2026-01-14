@@ -108,17 +108,19 @@ const ProductSection = ({
   return (
     <div className="my-8 w-full px-4 sm:px-6 lg:px-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 xl:w-5xl">
-        <div className="text-md flex w-full flex-col items-center gap-8 rounded-xl border-2 bg-green-500/50 p-6 md:flex-row">
+        <div className="text-md flex w-full flex-col gap-8 overflow-hidden rounded-xl border-2 bg-green-500/50 p-6 md:flex-row">
           <SearchBox
             filterQuery={searchQuery}
             onSearch={changeHandler<HTMLInputElement>(setSearchQuery)}
           />
-          <SortItems
-            selectedCat={selectedCat}
-            onSorting={changeHandler<HTMLSelectElement>(setCategory)}
-            allCategories={allCategories}
-          />
-          <ResetButton />
+          <div className="flex items-center gap-8">
+            <SortItems
+              selectedCat={selectedCat}
+              onSorting={changeHandler<HTMLSelectElement>(setCategory)}
+              allCategories={allCategories}
+            />
+            <ResetButton />
+          </div>
         </div>
         <ProductList
           filteredList={filteredList}

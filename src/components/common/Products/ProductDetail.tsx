@@ -44,8 +44,9 @@ const ProductDetail = ({
   };
 
   return (
-    // TODO: modal in other brakpoints
     <section
+      role="dialog"
+      aria-modal="true"
       onClick={() => closeModalHandler("")}
       className="fixed inset-0 flex items-center justify-center overflow-y-auto bg-black/50 p-4 md:p-8"
     >

@@ -215,8 +215,166 @@ const mockProducts = [
     moves: ["swords-dance", "cut", "headbutt", "fury-attack"],
     abilities: ["swarm", "sniper"],
   },
+  {
+    name: "pidgey",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png",
+    type: ["normal", "flying"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/16.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/16.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/16.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/16.gif",
+    ],
+    moves: ["razor-wind", "gust", "wing-attack", "whirlwind"],
+    abilities: ["keen-eye", "tangled-feet", "big-pecks"],
+  },
+  {
+    name: "pidgeotto",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
+    type: ["normal", "flying"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/17.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/17.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/17.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/17.gif",
+    ],
+    moves: ["razor-wind", "gust", "wing-attack", "whirlwind"],
+    abilities: ["keen-eye", "tangled-feet", "big-pecks"],
+  },
+  {
+    name: "pidgeot",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
+    type: ["normal", "flying"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/18.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/18.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/18.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/18.gif",
+    ],
+    moves: ["razor-wind", "gust", "wing-attack", "whirlwind"],
+    abilities: ["keen-eye", "tangled-feet", "big-pecks"],
+  },
+  {
+    name: "rattata",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
+    type: ["normal"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/19.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/female/19.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/19.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/19.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/female/19.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/19.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/female/19.gif",
+    ],
+    moves: ["cut", "headbutt", "tackle", "body-slam"],
+    abilities: ["run-away", "guts", "hustle"],
+  },
+  {
+    name: "raticate",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
+    type: ["normal"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/20.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/female/20.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/20.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/20.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/female/20.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/20.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/female/20.gif",
+    ],
+    moves: ["swords-dance", "cut", "headbutt", "tackle"],
+    abilities: ["run-away", "guts", "hustle"],
+  },
+  {
+    name: "spearow",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
+    type: ["normal", "flying"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/21.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/21.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/21.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/21.gif",
+    ],
+    moves: ["razor-wind", "wing-attack", "whirlwind", "fly"],
+    abilities: ["keen-eye", "sniper"],
+  },
+  {
+    name: "fearow",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png",
+    type: ["normal", "flying"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/22.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/22.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/22.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/22.gif",
+    ],
+    moves: ["razor-wind", "wing-attack", "whirlwind", "fly"],
+    abilities: ["keen-eye", "sniper"],
+  },
+  {
+    name: "ekans",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
+    type: ["poison"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/23.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/23.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/23.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/23.gif",
+    ],
+    moves: ["bind", "slam", "headbutt", "body-slam"],
+    abilities: ["intimidate", "shed-skin", "unnerve"],
+  },
+  {
+    name: "arbok",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
+    type: ["poison"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/24.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/24.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/24.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/24.gif",
+    ],
+    moves: ["bind", "slam", "headbutt", "body-slam"],
+    abilities: ["intimidate", "shed-skin", "unnerve"],
+  },
+  {
+    name: "pikachu",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    type: ["electric"],
+    gifs: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/25.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/female/25.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/shiny/25.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/25.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/female/25.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/25.gif",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/female/25.gif",
+    ],
+    moves: ["mega-punch", "pay-day", "thunder-punch", "slam"],
+    abilities: ["static", "lightning-rod"],
+  },
 ];
 
-const mockCategories = ["grass", "poison", "fire", "flying", "water", "bug"];
+const mockCategories = [
+  "grass",
+  "poison",
+  "fire",
+  "flying",
+  "water",
+  "bug",
+  "normal",
+  "electric",
+];
 
 export { mockProducts, mockCategories };

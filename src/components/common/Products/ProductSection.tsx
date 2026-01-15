@@ -100,7 +100,7 @@ const ProductSection = ({
           setItemLen(lengthDiff);
         }}
         className="flex h-9 w-9 items-center justify-center rounded-full bg-red-100 p-1 transition-colors hover:bg-red-200"
-        aria-label="Clear filters"
+        aria-label="Clear product section filters"
       >
         <CloseIcon className="h-6 w-6 text-red-500" />
       </Button>

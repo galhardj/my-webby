@@ -1,4 +1,4 @@
-import { ChevronDown } from "@/src/components/icons/ChevronDown";
+import { ChevronDown } from "@/src/icons/ChevronDown";
 
 interface SortItems {
   selectedCat: string;

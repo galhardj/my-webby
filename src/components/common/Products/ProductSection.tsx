@@ -7,7 +7,7 @@ import SortItems from "./SortItems";
 import Button from "../Button";
 import ProductDetail from "./ProductDetail";
 import { PokemonDetail } from "@/src/type/pokemon";
-import { CloseIcon } from "@/src/components/icons/CloseIcon";
+import { CloseIcon } from "@/src/icons/CloseIcon";
 import type { ProductSection } from "@/src/type/product";
 
 //TODO: see if MediaQuery should be implemented; https://www.linkedin.com/pulse/why-you-should-stop-using-media-queries-nextjs-felipe-rocha-82e8f

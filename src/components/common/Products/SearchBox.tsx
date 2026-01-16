@@ -1,4 +1,4 @@
-import { Magnifier } from "@/src/components/icons/Magnifier";
+import { Magnifier } from "@/src/icons/Magnifier";
 
 interface SearchBox {
   filterQuery: string;

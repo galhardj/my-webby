@@ -35,7 +35,7 @@ const ProductItem = ({
   );
 
   return (
-    <li className="overflow-hidden rounded-2xl border-2 border-gray-200">
+    <li className="overflow-hidden rounded-2xl border-2 border-gray-200 bg-gray-50">
       <button
         className="flex w-full flex-col gap-3"
         onClick={() => selecthandler(name)}

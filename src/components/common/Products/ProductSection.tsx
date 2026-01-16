@@ -123,7 +123,7 @@ const ProductSection = ({
                 onSorting={changeHandler<HTMLSelectElement>(setCategory)}
                 allCategories={allCategories}
               />
-              <ResetButton />
+              {(searchQuery || selectedCat) && <ResetButton />}
             </div>
           </div>
         </div>

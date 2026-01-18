@@ -12,7 +12,6 @@ export interface Input {
   id: string;
   type: "checkbox" | string;
   label: string;
-  children?: ReactNode;
 }
 
 export interface Select {

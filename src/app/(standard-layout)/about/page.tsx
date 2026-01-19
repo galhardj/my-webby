@@ -9,7 +9,7 @@ import { FORM } from "@/src/constants/form";
 
 export default function Page() {
   return (
-    <main className="min-h-dvh">
+    <>
       <BannerLegacy />
       <Banner
         position={BANNER.position}
@@ -28,6 +28,6 @@ export default function Page() {
         buttonText={FORM.buttonText}
       />
       <Footer />
-    </main>
+    </>
   );
 }

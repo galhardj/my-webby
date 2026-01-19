@@ -3,9 +3,9 @@ import ToggleSwitch from "@/src/components/css-framework/tailwindcss/ToggleSwitc
 
 export default function Page() {
   return (
-    <main className="min-h-dvh">
+    <>
       <AdminContactsGrid />
       <ToggleSwitch />
-    </main>
+    </>
   );
 }

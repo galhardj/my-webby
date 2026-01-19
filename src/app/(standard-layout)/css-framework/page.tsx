@@ -9,7 +9,7 @@ import ModalSection from "@/src/components/common/Modal/Modal";
 
 export default function Page() {
   return (
-    <main className="min-h-dvh">
+    <>
       <Diff />
       <StatusCard />
       <HighlightCarousel />
@@ -18,6 +18,6 @@ export default function Page() {
       <GridList />
       <ModalDemo />
       <ModalSection />
-    </main>
+    </>
   );
 }

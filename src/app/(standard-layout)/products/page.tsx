@@ -7,7 +7,7 @@ import { pokemonDetailList, allCategories } from "@/src/lib/domain/pokemon";
 
 export default async function Page() {
   return (
-    <main className="min-h-dvh">
+    <>
       <FestiveMenu />
       <ProductHovered />
       <CarouselSlide />
@@ -16,6 +16,6 @@ export default async function Page() {
         allCategories={allCategories}
       />
       <BannerClaude />
-    </main>
+    </>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "@/src/styles/globals.css";
+import Footer from "@/src/components/common/Footer/Footer";
+import NavigationMenuBar from "@/src/components/css-framework/shadcn/NavigationMenu";
 
 export const metadata: Metadata = {
   title: "My Webby",
@@ -12,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <>
+      <NavigationMenuBar />
+      <main className="min-h-dvh">{children}</main>
+      <Footer />
+    </>
   );
 }

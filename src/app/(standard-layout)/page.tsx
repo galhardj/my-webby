@@ -12,7 +12,7 @@ export default async function Page() {
   const contentfulBanner = await fetchContentful();
 
   return (
-    <main className="min-h-dvh">
+    <>
       <BannerLegacy />
       <Banner
         position={contentfulBanner.fields.imagePosition ? "left" : "right"}
@@ -32,6 +32,6 @@ export default async function Page() {
         containers={FORM.containers}
         buttonText={FORM.buttonText}
       />
-    </main>
+    </>
   );
 }

@@ -2,7 +2,7 @@ import BannerLegacy from "@/src/components/common/Banner/BannerLegacy/BannerLega
 import Footer from "@/src/components/common/Footer/Footer";
 import Banner from "@/src/components/common/Banner/Banner";
 import Accordion from "@/src/components/common/Accordion/Accordion";
-import Form from "@/src/components/common/UserInput/organism/Form/Form";
+import Form from "@/src/components/common/Forms/Contact/Contact";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";
 import { FORM } from "@/src/constants/form";

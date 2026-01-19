@@ -1,7 +1,7 @@
-import Input from "../../../atomic/Input";
-import Select from "../../../atomic/Select";
-import Checkbox from "../../../atomic/Checkbox";
-import Textarea from "../../../atomic/Textarea";
+import Input from "../../Input";
+import Select from "../../Select";
+import Checkbox from "../../Checkbox";
+import Textarea from "../../Textarea";
 import { formContainer } from "@/src/type/prop";
 
 const InputMapper = ({ inputs }: Pick<formContainer, "inputs">) => {

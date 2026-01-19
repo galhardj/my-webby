@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Form.module.css";
+import styles from "./Contact.module.css";
 import type { Form } from "@/src/type/prop";
 import ContainerMapper from "./mapper/ContainerMapper";
 

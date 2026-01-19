@@ -6,6 +6,7 @@ import SearchBox from "./SearchBox";
 import SortItems from "./SortItems";
 import Button from "../Button";
 import ProductDetail from "./ProductDetail";
+import ContentBlock from "@/src/components/common/ContentBlock";
 import { PokemonDetail } from "@/src/type/pokemon";
 import { CloseIcon } from "@/src/icons/CloseIcon";
 import type { ProductSection } from "@/src/type/product";
@@ -109,8 +110,8 @@ const ProductSection = ({
 
   // TODO: adding the reset button for product.filter; SearchBox, SortItems
   return (
-    <div className="my-8 w-full px-4 sm:px-6 lg:px-10">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 xl:w-5xl">
+    <ContentBlock>
+      <div className="flex flex-col items-center gap-6">
         <div className="text-md flex w-full justify-center overflow-hidden rounded-xl border-2 bg-green-500/50 p-6">
           <div className="flex flex-col gap-8 md:flex-row">
             <SearchBox
@@ -137,7 +138,7 @@ const ProductSection = ({
           <ProductDetail product={detailedProduct} onCloseModal={setProduct} />
         )}
       </div>
-    </div>
+    </ContentBlock>
   );
 };
 

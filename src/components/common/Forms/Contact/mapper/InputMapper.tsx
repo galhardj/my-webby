@@ -2,7 +2,7 @@ import Input from "../../Input";
 import Select from "../../Select";
 import Checkbox from "../../Checkbox";
 import Textarea from "../../Textarea";
-import { formContainer } from "@/src/type/prop";
+import { formContainer } from "@/src/type/forms";
 
 const InputMapper = ({ inputs }: Pick<formContainer, "inputs">) => {
   return inputs.map((input, index) => {

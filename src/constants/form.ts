@@ -1,4 +1,4 @@
-import type { Form } from "@/src/type/prop";
+import type { Form } from "@/src/type/forms";
 
 export const gridColumn: Record<number, string> = {
   1: "1fr",

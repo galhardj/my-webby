@@ -1,6 +1,6 @@
 import Container from "../Container/Container";
 import InputMapper from "./InputMapper";
-import { Form } from "@/src/type/prop";
+import { Form } from "@/src/type/forms";
 import { gridColumn } from "@/src/constants/form";
 
 const ContainerMapper = ({ containers }: Pick<Form, "containers">) => {

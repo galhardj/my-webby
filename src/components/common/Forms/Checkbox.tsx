@@ -1,5 +1,5 @@
 import CheckboxItem from "./CheckboxItem";
-import type { Checkbox } from "@/src/type/prop";
+import type { Checkbox } from "@/src/type/forms";
 
 const Checkbox = ({ legend, checkboxes }: Checkbox) => {
   return (

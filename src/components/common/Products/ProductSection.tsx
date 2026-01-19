@@ -53,14 +53,14 @@ const ProductSection = ({
   const ButtonExpand = () => (
     <div className="flex gap-3">
       <Button
-        className="rounded-2xl border bg-amber-300 px-6 py-3 text-gray-600"
+        styleType="yellow"
         onClick={() => setItemLen((prev) => prev + lengthDiff)}
         data-testid="show-more-products"
       >
         Show more
       </Button>
       <Button
-        className="rounded-2xl border bg-amber-400 px-9 py-3 text-gray-600"
+        styleType="yellowDark"
         onClick={() => setItemLen(productList.length)}
         data-testid="show-all-products"
       >
@@ -72,7 +72,7 @@ const ProductSection = ({
 
   const ButtonCollapse = () => (
     <Button
-      className="rounded-2xl border bg-blue-200 px-9 py-3 text-gray-600"
+      styleType="blue"
       onClick={() => setItemLen(lengthDiff)}
       data-testid="minimize-product-list"
     >
@@ -100,7 +100,8 @@ const ProductSection = ({
           setCategory("");
           setItemLen(lengthDiff);
         }}
-        className="flex h-9 w-9 items-center justify-center rounded-full bg-red-100 p-1 transition-colors hover:bg-red-200"
+        style="icon"
+        styleType="resetButton"
         aria-label="Clear product section filters"
       >
         <CloseIcon className="h-6 w-6 text-red-500" />
@@ -110,7 +111,7 @@ const ProductSection = ({
 
   // TODO: adding the reset button for product.filter; SearchBox, SortItems
   return (
-    <ContentBlock>
+    <ContentBlock width="wide">
       <div className="flex flex-col items-center gap-6">
         <div className="text-md flex w-full justify-center overflow-hidden rounded-xl border-2 bg-green-500/50 p-6">
           <div className="flex flex-col gap-8 md:flex-row">

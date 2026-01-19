@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./AccordionItem.module.css";
-import type { AccordionItemProp } from "@/src/type/prop";
+import type { AccordionItemProp } from "@/src/type/forms";
 
 const AccordionItem = ({
   id,

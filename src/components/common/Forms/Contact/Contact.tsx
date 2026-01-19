@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Contact.module.css";
-import type { Form } from "@/src/type/prop";
+import type { Form } from "@/src/type/forms";
 import ContainerMapper from "./mapper/ContainerMapper";
 
 const Form = ({ title, description, containers, buttonText }: Form) => {

@@ -1,4 +1,4 @@
-import type { Select } from "@/src/type/prop";
+import type { Select } from "@/src/type/forms";
 
 const Select = ({ id, label, options }: Select) => {
   return (

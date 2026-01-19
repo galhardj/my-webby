@@ -1,4 +1,4 @@
-import type { CheckboxItem } from "@/src/type/prop";
+import type { CheckboxItem } from "@/src/type/forms";
 
 const CheckboxItem = ({ id, label }: CheckboxItem) => {
   return (

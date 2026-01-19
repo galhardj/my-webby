@@ -1,15 +1,24 @@
 import React from "react";
 import { cn } from "@/src/lib/utils/mergeTailwind";
-
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+import { ButtonProps } from "@/src/type/props";
+import { BUTTON_STYLE } from "@/src/constants/styles";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ type = "button", className, children, ...props }, ref) => {
+  (
+    {
+      type = "button",
+      style = "commonButton",
+      styleType = "yellow",
+      children,
+      ...props
+    },
+    ref,
+  ) => {
     return (
       <button
         className={cn(
-          "rounded-lg border-2 bg-white/50 px-6 py-3 font-medium text-white",
-          className,
+          "mt-3 rounded-xl border px-6 py-3 font-medium text-gray-600",
+          BUTTON_STYLE[style][styleType],
         )}
         ref={ref}
         type={type}

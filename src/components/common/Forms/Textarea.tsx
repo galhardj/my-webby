@@ -1,6 +1,6 @@
 "use client";
 
-import type { Textarea } from "@/src/type/prop";
+import type { Textarea } from "@/src/type/forms";
 import { useState, useEffect } from "react";
 
 const Textarea = ({ id, label, placeholder }: Textarea) => {

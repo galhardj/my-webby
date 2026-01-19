@@ -1,4 +1,4 @@
-import Container from "../Container/Container";
+import Container from "./Container";
 import type { Select } from "@/src/type/prop";
 
 const Select = ({ id, label, options }: Select) => {

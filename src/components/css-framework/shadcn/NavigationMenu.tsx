@@ -49,7 +49,7 @@ export default function NavigationMenuBar() {
                   <Link href="#">Tailwind pages</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">Login page</Link>
+                  <Link href="/login">Login page</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="#">Blogs SSG</Link>

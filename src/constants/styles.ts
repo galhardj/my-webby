@@ -1,4 +1,4 @@
-import { StringNested } from "@/src/type/common";
+import { StringNested, StringToString } from "@/src/type/common";
 
 export const BUTTON_STYLE: StringNested = {
   commonButton: {
@@ -10,4 +10,9 @@ export const BUTTON_STYLE: StringNested = {
     resetButton:
       "flex h-9 w-9 items-center justify-center rounded-full bg-red-100 p-1 transition-colors hover:bg-red-200",
   },
+};
+
+export const BLOCK_WIDTH: StringToString = {
+  wide: "max-w-7xl xl:w-5xl",
+  center: "w-sm",
 };

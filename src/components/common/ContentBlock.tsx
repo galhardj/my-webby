@@ -1,9 +1,4 @@
-import { StringToString } from "@/src/type/common";
-
-const BLOCK_WIDTH: StringToString = {
-  wide: "max-w-7xl xl:w-5xl",
-  center: "w-sm",
-};
+import { BLOCK_WIDTH } from "@/src/constants/styles";
 
 const ContentBlock = ({
   width = "wide",

@@ -14,5 +14,5 @@ export const BUTTON_STYLE: StringNested = {
 
 export const BLOCK_WIDTH: StringToString = {
   wide: "max-w-7xl xl:w-5xl",
-  center: "w-sm",
+  center: "flex h-screen flex-col justify-center lg:w-sm",
 };

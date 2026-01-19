@@ -1,10 +1,10 @@
 import Input from "./Input";
-import ContentBlock from "@/src/components/common/ContentBlock";
+import ContainerBlock from "@/src/components/common/ContainerBlock";
 import Button from "@/src/components/common/Button";
 
 const LoginForm = () => {
   return (
-    <ContentBlock width="center">
+    <ContainerBlock type="screen-centered">
       <form className="flex flex-col gap-4 rounded-lg border-2 p-12">
         <Input
           id={"login-username"}
@@ -14,7 +14,7 @@ const LoginForm = () => {
         <Input id={"login-password"} type={"text"} label={"Password"} />
         <Button>Login</Button>
       </form>
-    </ContentBlock>
+    </ContainerBlock>
   );
 };
 

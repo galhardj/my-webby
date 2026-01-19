@@ -1,7 +1,6 @@
 "use client";
 
 import type { Textarea } from "@/src/type/prop";
-import Container from "./Container";
 import { useState, useEffect } from "react";
 
 const Textarea = ({ id, label, placeholder }: Textarea) => {
@@ -23,8 +22,10 @@ const Textarea = ({ id, label, placeholder }: Textarea) => {
   };
 
   return (
-    <Container>
-      <label htmlFor={id}>{label}</label>
+    <div>
+      <label htmlFor={id} className="mb-2 block">
+        {label}
+      </label>
       <textarea
         id={id}
         name={id}
@@ -32,7 +33,7 @@ const Textarea = ({ id, label, placeholder }: Textarea) => {
         value={message}
         onChange={changeHandler}
       />
-    </Container>
+    </div>
   );
 };
 

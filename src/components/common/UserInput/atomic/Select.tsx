@@ -1,10 +1,11 @@
-import Container from "./Container";
 import type { Select } from "@/src/type/prop";
 
 const Select = ({ id, label, options }: Select) => {
   return (
-    <Container>
-      <label htmlFor={id}>{label}</label>
+    <div>
+      <label htmlFor={id} className="mb-2 block">
+        {label}
+      </label>
       <select id={id} name={id}>
         <option value="">{options[0]}</option>
         {options.slice(1).map((option, index) => (
@@ -13,7 +14,7 @@ const Select = ({ id, label, options }: Select) => {
           </option>
         ))}
       </select>
-    </Container>
+    </div>
   );
 };
 

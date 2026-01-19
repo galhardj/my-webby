@@ -1,12 +1,13 @@
 import type { Input } from "@/src/type/prop";
-import Container from "./Container";
 
 const Input = ({ id, type, label }: Input) => {
   const InputCommon = () => (
-    <Container>
-      <label htmlFor={id}>{label}</label>
+    <div>
+      <label htmlFor={id} className="mb-2 block">
+        {label}
+      </label>
       <input type={type} id={id} name={id} />
-    </Container>
+    </div>
   );
 
   const InputCheckbox = () => (

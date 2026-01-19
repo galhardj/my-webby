@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./AccordionItem.module.css";
-import type { AccordionItemProp } from "@/src/type/forms";
+import type { AccordionItemProps } from "@/src/type/props";
 
 const AccordionItem = ({
   id,
@@ -9,7 +9,7 @@ const AccordionItem = ({
   description,
   openItem,
   onItemClick,
-}: AccordionItemProp) => {
+}: AccordionItemProps) => {
   return (
     <details
       className={styles["accordion-item"]}

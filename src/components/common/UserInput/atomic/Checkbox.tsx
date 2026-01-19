@@ -1,4 +1,4 @@
-import Input from "./Input";
+import CheckboxItem from "./CheckboxItem";
 import type { Checkbox } from "@/src/type/prop";
 
 const Checkbox = ({ legend, checkboxes }: Checkbox) => {
@@ -6,9 +6,8 @@ const Checkbox = ({ legend, checkboxes }: Checkbox) => {
     <fieldset>
       <legend>{legend}</legend>
       {checkboxes.map((checkbox, index) => (
-        <Input
+        <CheckboxItem
           id={checkbox.replace(/\s+/g, "-").toLowerCase()}
-          type="checkbox"
           label={checkbox}
           key={index}
         />

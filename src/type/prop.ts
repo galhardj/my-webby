@@ -10,7 +10,12 @@ export interface AccordionItemProp {
 
 export interface Input {
   id: string;
-  type: "checkbox" | "text" | "number" | "tel";
+  type: "text" | "number" | "tel";
+  label: string;
+}
+
+export interface CheckboxItem {
+  id: string;
   label: string;
 }
 

@@ -40,7 +40,12 @@ export default function NavigationMenuBar() {
             <Link href="/products">Products</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hidden md:block">
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/login">Login</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        {/* <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger>New things to come</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
             <ul className="grid w-[200px] gap-4">
@@ -60,7 +65,7 @@ export default function NavigationMenuBar() {
               </li>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );

@@ -1,10 +1,9 @@
 import { ReactNode } from "react";
 
-export interface Input {
-  id: string;
-  type: "text" | "number" | "tel";
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-}
+  id: string;
+};
 
 export interface CheckboxItem {
   id: string;
@@ -46,7 +45,7 @@ export interface formContainer {
 }
 
 export type input =
-  | ({ fieldType: "input" } & Input)
+  | ({ fieldType: "input" } & InputProps)
   | ({ fieldType: "select" } & Select)
   | ({ fieldType: "checkbox" } & Checkbox)
   | ({ fieldType: "textarea" } & Textarea);

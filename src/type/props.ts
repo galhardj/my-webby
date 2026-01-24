@@ -3,7 +3,7 @@ export type ButtonProps = Omit<
   "className"
 > & {
   style?: "commonButton" | "icon";
-  styleType?: "yellow" | "yellowDark" | "blue" | "resetButton";
+  styleType?: "yellow" | "yellowDark" | "blue" | "resetButton" | "password";
 };
 
 export interface ContainerBlockProps {

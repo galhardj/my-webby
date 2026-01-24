@@ -17,7 +17,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "mt-3 rounded-xl border px-6 py-3 font-medium text-gray-600",
+          style === "commonButton"
+            ? "mt-3 rounded-xl border px-6 py-3 font-medium text-gray-600"
+            : "",
           BUTTON_STYLE[style][styleType],
         )}
         ref={ref}

@@ -49,4 +49,16 @@ interface PokeType {
   };
 }
 
-export type { PokeApi, PokemonList, PokemonDetailApi, PokemonDetail, PokeType };
+interface PokemonData {
+  pokemonDetailList: PokemonDetail[];
+  allCategories: string[];
+}
+
+export type {
+  PokeApi,
+  PokemonList,
+  PokemonDetailApi,
+  PokemonDetail,
+  PokeType,
+  PokemonData,
+};

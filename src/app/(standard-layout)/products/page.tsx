@@ -3,9 +3,11 @@ import ProductHovered from "@/src/components/common/Products/claude/ProductHover
 import ProductSection from "@/src/components/common/Products/ProductSection";
 import CarouselSlide from "@/src/components/common/Products/claude/CarouselClaude";
 import BannerClaude from "@/src/components/common/Products/claude/BannerClaude";
-import { pokemonDetailList, allCategories } from "@/src/lib/domain/pokemon";
+import { getPokemonData } from "@/src/lib/domain/pokemon";
 
 export default async function Page() {
+  const { pokemonDetailList, allCategories } = await getPokemonData();
+
   return (
     <>
       <FestiveMenu />

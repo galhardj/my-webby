@@ -8,32 +8,38 @@ import {
   PokemonList,
   PokemonDetailApi,
   PokeType,
-  PokemonDetail,
+  PokemonData,
 } from "@/src/type/pokemon";
-import { pokemonList } from "@/src/lib/api/pokemon";
+import { getPokemonList } from "@/src/lib/api/pokemon";
 
 // TODO: to make below as function instead for testing purpose
-const pokemonDetailList: PokemonDetail[] = await Promise.all(
-  pokemonList.map(async ({ url }: PokemonList) => {
-    const pokemonDetail = await fetcher<PokemonDetailApi>(url, SSR);
+export const getPokemonData = async (): Promise<PokemonData> => {
+  const pokemonList = await getPokemonList();
 
-    return {
-      name: pokemonDetail.name,
-      image: pokemonDetail.sprites.other["official-artwork"].front_default,
-      type: pokemonDetail.types.map((typeItem: PokeType) => typeItem.type.name),
-      gifs: Object.values(pokemonDetail.sprites.other.showdown).filter(
-        (gif): gif is string => Boolean(gif),
-      ),
-      moves: pokemonDetail.moves.slice(0, 4).map((move) => move.move.name),
-      abilities: pokemonDetail.abilities
-        .slice(0, 4)
-        .map((ability) => ability.ability.name),
-    };
-  }),
-);
+  const pokemonDetailList = await Promise.all(
+    pokemonList.map(async ({ url }: PokemonList) => {
+      const pokemonDetail = await fetcher<PokemonDetailApi>(url, SSR);
 
-const allCategories = Array.from(
-  new Set(pokemonDetailList.map((pokemon) => pokemon.type).flat()),
-);
+      return {
+        name: pokemonDetail.name,
+        image: pokemonDetail.sprites.other["official-artwork"].front_default,
+        type: pokemonDetail.types.map(
+          (typeItem: PokeType) => typeItem.type.name,
+        ),
+        gifs: Object.values(pokemonDetail.sprites.other.showdown).filter(
+          (gif): gif is string => Boolean(gif),
+        ),
+        moves: pokemonDetail.moves.slice(0, 4).map((move) => move.move.name),
+        abilities: pokemonDetail.abilities
+          .slice(0, 4)
+          .map((ability) => ability.ability.name),
+      };
+    }),
+  );
 
-export { pokemonDetailList, allCategories };
+  const allCategories = Array.from(
+    new Set(pokemonDetailList.map((pokemon) => pokemon.type).flat()),
+  );
+
+  return { pokemonDetailList, allCategories };
+};

@@ -60,9 +60,8 @@ const ModalSection = () => {
                 Escape key to close it and return focus to the button.
               </p>
               <div className="flex justify-end gap-4">
-                <Button onClick={setModal} className="bg-gray-50 text-gray-700">
-                  Cancel
-                </Button>
+                {/* Cancel; className="bg-gray-50 text-gray-700" */}
+                <Button onClick={setModal}>Cancel</Button>{" "}
                 <Button ref={confirmRef} onClick={setModal}>
                   Confirm
                 </Button>

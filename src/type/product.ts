@@ -10,4 +10,15 @@ interface ProductDetail<ProductDetail> {
   onCloseModal: Dispatch<SetStateAction<string>>;
 }
 
-export type { ProductSection, ProductDetail };
+interface ProductClaude {
+  id: number;
+  name: string;
+  image: string;
+  isVegetarian: boolean;
+  category: string;
+  description: string;
+  price: string;
+  ingredients: string[];
+}
+
+export type { ProductSection, ProductDetail, ProductClaude };

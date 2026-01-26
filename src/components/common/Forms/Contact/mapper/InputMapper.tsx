@@ -1,4 +1,4 @@
-import Input from "../../Input";
+import Input from "../../InputWithLabel";
 import Select from "../../Select";
 import Checkbox from "../../Checkbox";
 import Textarea from "../../Textarea";

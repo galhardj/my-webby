@@ -1,4 +1,4 @@
-import { type AuthResponse as LoginSuccessResponse } from "@supabase/supabase-js";
+import type { User as LoginSuccessResponse } from "@supabase/supabase-js";
 
 type LoginErrorResponse = {
   error: string;

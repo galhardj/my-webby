@@ -5,10 +5,10 @@ export const fetcher = async <T>(
   options: RequestInit,
 ): Promise<T> => {
   try {
-    // TODO: To fix this Certificate handling
-    const isServer = typeof window === "undefined";
+    // TODO: Validate / fix this Certificate handling
     // In dev on the server, relax TLS verification to avoid local issuer cert errors.
     // Do NOT rely on this in production; fix your system / proxy certs instead.
+    const isServer = typeof window === "undefined";
     if (isServer && process.env.NODE_ENV !== "production") {
       process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     }

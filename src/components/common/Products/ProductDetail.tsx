@@ -2,7 +2,7 @@
 
 import Button from "../Button";
 import Link from "../Link";
-import Image from "../Image";
+import ImageNext from "@/src/components/common/ImageNext";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { typeColor } from "@/src/constants/products";
@@ -34,7 +34,7 @@ const ProductDetail = ({
     return (
       <div>
         <h3 className="text-lg font-semibold md:text-xl">{title}</h3>
-        <ul className="pl-4 text-sm list-disc md:text-base">
+        <ul className="list-disc pl-4 text-sm md:text-base">
           {list.map((item: string, index: number) => (
             <li key={index}>{item}</li>
           ))}
@@ -48,17 +48,17 @@ const ProductDetail = ({
       role="dialog"
       aria-modal="true"
       onClick={() => closeModalHandler("")}
-      className="fixed inset-0 flex items-center justify-center p-4 overflow-y-auto bg-black/50 md:p-8"
+      className="fixed inset-0 flex items-center justify-center overflow-y-auto bg-black/50 p-4 md:p-8"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="flex flex-col items-center w-full max-w-3xl gap-20 p-10 my-auto border-gray-400 h-max rounded-2xl border-6 bg-gray-50 md:flex-row"
+        className="my-auto flex h-max w-full max-w-3xl flex-col items-center gap-20 rounded-2xl border-6 border-gray-400 bg-gray-50 p-10 md:flex-row"
       >
-        <figure className="relative flex items-center flex-1 w-3/4 aspect-square md:w-auto">
-          <Image
+        <figure className="relative flex aspect-square w-3/4 flex-1 items-center md:w-auto">
+          <ImageNext
             src={product.gifs[slideIndex]}
             alt={product.name}
-            className="object-contain w-full h-full rounded-sm"
+            className="h-full w-full rounded-sm object-contain"
           />
           <Button
             style="icon"
@@ -83,7 +83,7 @@ const ProductDetail = ({
               <h2 className="text-2xl font-bold md:text-3xl">
                 {product.name.charAt(0).toUpperCase() + product.name.slice(1)}
               </h2>
-              <hr className="w-full h-1 bg-gray-600" />
+              <hr className="h-1 w-full bg-gray-600" />
             </div>
 
             <div className="flex gap-5 md:gap-15">

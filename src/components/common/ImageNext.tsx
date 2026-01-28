@@ -5,8 +5,8 @@ type AppImage = Omit<ImageProps, "src"> & {
 };
 
 // TODO: consider; div wrapping, 'sizes' att
-const AppImage = ({ ...props }: AppImage) => {
+const ImageNext = ({ ...props }: AppImage) => {
   return <Image fill unoptimized={props.src.endsWith(".gif")} {...props} />;
 };
 
-export default AppImage;
+export default ImageNext;

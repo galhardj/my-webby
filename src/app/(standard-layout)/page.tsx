@@ -9,6 +9,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { fetchContentful } from "@/src/lib/api/contentful";
 
 export default async function Page() {
+  // TODO: to create domain/contentful.ts to process api response, refer; src/components/common/Products/ProductSectionWrapper.tsx
   const contentfulBanner = await fetchContentful();
 
   return (

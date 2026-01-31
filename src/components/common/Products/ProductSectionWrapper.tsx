@@ -4,6 +4,7 @@ import { getPokemonData } from "@/src/lib/domain/pokemon";
 import ContainerBlock from "@/src/components/common/ContainerBlock";
 
 async function ProductSectionWithData() {
+  //need to not be in the page.tsx since getPokemonData is SSR / force-dynamic the whole page
   const { pokemonDetailList, allCategories } = await getPokemonData();
 
   return (

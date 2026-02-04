@@ -1,17 +1,33 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { getSupabaseUser } from "@/src/lib/api/supabase/withoutCookies";
 
-export function middleware(request: NextRequest) {
-  // console.log("🚀 MIDDLEWARE IS RUNNING!");
-  // console.log("Path:", request.nextUrl.pathname);
+export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
 
-  const response = NextResponse.next();
-  response.headers.set("x-middleware-executed", "true");
-  response.headers.set("x-pathname", request.nextUrl.pathname);
+  const user = await getSupabaseUser(request);
 
-  return response;
+  const withDebugHeaders = (response: NextResponse) => {
+    response.headers.set("x-middleware-executed", "true");
+    response.headers.set("x-pathname", pathname);
+    return response;
+  };
+
+  if (pathname.startsWith("/login") && user) {
+    return withDebugHeaders(
+      NextResponse.redirect(new URL("/dashboard", request.url)),
+    );
+  }
+
+  if (pathname.startsWith("/dashboard") && !user) {
+    return withDebugHeaders(
+      NextResponse.redirect(new URL("/login", request.url)),
+    );
+  }
+
+  return withDebugHeaders(NextResponse.next());
 }
 
 export const config = {
-  matcher: ["/:path*"],
+  matcher: ["/login/:path*", "/dashboard/:path*"],
 };

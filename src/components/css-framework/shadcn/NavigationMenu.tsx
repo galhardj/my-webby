@@ -1,21 +1,19 @@
-"use client";
-
-import * as React from "react";
 import Link from "next/link";
+import { getSupabaseUser } from "@/src/lib/api/supabase";
 
 // import { useIsMobile } from "@/hooks/use-mobile"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
+import { LogoutButton } from "./LogoutButton";
 
-export default function NavigationMenuBar() {
+export default async function NavigationMenuBar() {
   //   const isMobile = useIsMobile()
+  const loginUser = await getSupabaseUser();
 
   return (
     <NavigationMenu className="mx-auto px-6 py-6">
@@ -41,9 +39,16 @@ export default function NavigationMenuBar() {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/login">Login</Link>
-          </NavigationMenuLink>
+          {!!loginUser ? (
+            <LogoutButton />
+          ) : (
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <Link href="/login">Login</Link>
+            </NavigationMenuLink>
+          )}
         </NavigationMenuItem>
         {/* <NavigationMenuItem className="hidden md:block">
           <NavigationMenuTrigger>New things to come</NavigationMenuTrigger>

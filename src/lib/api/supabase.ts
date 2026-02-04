@@ -38,3 +38,8 @@ export const getSupabaseUser = async () => {
 
   return user;
 };
+
+export const logoutSupabaseUser = async () => {
+  const supabase = await createSupabaseServerClient();
+  await supabase.auth.signOut();
+};

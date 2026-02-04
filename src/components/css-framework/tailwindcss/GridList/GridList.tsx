@@ -24,7 +24,6 @@ const GridItem = ({
   name,
   role,
   imgLink,
-  key,
 }: {
   name: string;
   role: string;
@@ -32,10 +31,7 @@ const GridItem = ({
   key: number;
 }) => {
   return (
-    <li
-      className="flex flex-col justify-between gap-3 rounded-md border-2 p-6"
-      key={key}
-    >
+    <li className="flex flex-col justify-between gap-3 rounded-md border-2 p-6">
       <div className="flex justify-between gap-4">
         <div className="">
           <p className="font-bold">{name}</p>

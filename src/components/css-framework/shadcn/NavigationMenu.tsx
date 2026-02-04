@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSupabaseUser } from "@/src/lib/api/supabase";
+import { getSupabaseUser } from "@/src/lib/api/supabase/withCookies";
 
 // import { useIsMobile } from "@/hooks/use-mobile"
 import {

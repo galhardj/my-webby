@@ -1,8 +1,21 @@
 import { NextResponse } from "next/server";
-import { logoutSupabaseUser } from "@/src/lib/api/supabase";
+import { supabaseServer } from "@/src/lib/api/supabase";
 
 export async function POST() {
-  // TODO: add error handling in here
-  await logoutSupabaseUser();
-  return NextResponse.json({ success: true });
+  try {
+    const supabase = await supabaseServer.withSetCookies();
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (err) {
+    console.error("Logout error:", err);
+    return NextResponse.json(
+      { error: "Unexpected error during logout" },
+      { status: 500 },
+    );
+  }
 }

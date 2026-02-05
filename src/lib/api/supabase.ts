@@ -50,8 +50,3 @@ export const getSupabaseUser = async () => {
 
   return user;
 };
-
-export const logoutSupabaseUser = async () => {
-  const supabase = await supabaseServer.withSetCookies();
-  await supabase.auth.signOut();
-};

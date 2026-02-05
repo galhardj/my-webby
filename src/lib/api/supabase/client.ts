@@ -22,11 +22,7 @@ export const createSupabaseClient = ({ getAll, setAll }: CookieAdapter) => {
   return createServerClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
       getAll,
-      setAll:
-        setAll ??
-        (() => {
-          // no-op for environments (like middleware) that don't need to set cookies
-        }),
+      setAll: setAll ?? (() => {}),
     },
   });
 };

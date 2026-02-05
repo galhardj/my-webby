@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { createSupabaseClient } from "@/src/lib/api/supabase/withCookies";
+import { supabaseServer } from "@/src/lib/api/supabase/withCookies";
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const supabase = await createSupabaseClient();
+    const supabase = await supabaseServer.withSetCookies();
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,

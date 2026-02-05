@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getSupabaseUser } from "@/src/lib/api/supabase/withCookies";
+import { getSupabaseUser } from "@/src/lib/api/supabase";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

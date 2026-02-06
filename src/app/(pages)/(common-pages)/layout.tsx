@@ -1,4 +1,4 @@
-import Footer from "@/src/components/common/Footer/Footer";
+import Footer from "@/src/components/common/Footer";
 import NavigationMenuBar from "@/src/components/css-framework/shadcn/NavigationMenu";
 
 export default function RootLayout({

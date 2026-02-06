@@ -1,5 +1,4 @@
 import BannerLegacy from "@/src/components/common/Banner/BannerLegacy/BannerLegacy";
-import Footer from "@/src/components/common/Footer/Footer";
 import Banner from "@/src/components/common/Banner/Banner";
 import Accordion from "@/src/components/common/Accordion/Accordion";
 import Form from "@/src/components/common/Forms/Contact/Contact";
@@ -27,7 +26,6 @@ export default function Page() {
         containers={FORM.containers}
         buttonText={FORM.buttonText}
       />
-      <Footer />
     </>
   );
 }

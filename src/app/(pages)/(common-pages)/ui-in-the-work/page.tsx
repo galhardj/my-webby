@@ -1,6 +1,6 @@
 import AdminContactsGrid from "@/src/components/css-framework/tailwindcss/GridList/GridClaude";
 import ToggleSwitch from "@/src/components/css-framework/tailwindcss/ToggleSwitch";
-import HeroBanner from "@/src/components/common/Hero/Hero";
+import HeroBanner from "@/src/components/common/Hero";
 import { HERO_BANNER } from "@/src/constants/banner";
 
 // TODO: check 'server undefined' in /ui-in-the-work' server console

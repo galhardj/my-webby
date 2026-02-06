@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { cn } from "@/src/lib/utils/mergeTailwind";
 
 interface AppLink {
   url: string;
-  style: "link" | "button";
+  style?: "link" | "button";
   children: ReactNode;
+  className?: string;
 }
 
 const linkStyle = {
@@ -19,12 +21,13 @@ const linkStyle = {
 // - /products (internal)
 // - products (internal)
 
-const AppLink = ({ url, style, children }: AppLink) => {
-  const hostOrigin = location.origin;
+const AppLink = ({ url, style, className, children }: AppLink) => {
+  const hostOrigin =
+    typeof window !== "undefined" ? window.location.origin : "";
 
   const isExternalUrl = (str: string) => {
     try {
-      return new URL(str).origin != hostOrigin;
+      return new URL(str).origin !== hostOrigin;
     } catch {
       return false;
     }
@@ -34,7 +37,7 @@ const AppLink = ({ url, style, children }: AppLink) => {
     return (
       <a
         href={url}
-        className={linkStyle[style]}
+        className={cn(className, style ? linkStyle[style] : "")}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -47,7 +50,10 @@ const AppLink = ({ url, style, children }: AppLink) => {
       : `${url.startsWith("/") ? "" : "/"}` + `${url}`;
 
     return (
-      <Link href={internalSlug} className={linkStyle[style]}>
+      <Link
+        href={internalSlug}
+        className={cn(className, style ? linkStyle[style] : "")}
+      >
         {children}
       </Link>
     );

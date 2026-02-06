@@ -9,6 +9,7 @@ export function LogoutButton() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    // TODO: add more error handling like src/lib/api/login.ts
     await fetch("/api/auth/logout", {
       method: "POST",
     });

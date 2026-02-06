@@ -25,3 +25,17 @@ export interface AccordionItemProps {
   openItem: boolean;
   onItemClick: (id: number) => void;
 }
+
+export interface HeroBannerProps {
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  subtitle: string;
+  description: string;
+  link: {
+    url: string;
+    text: string;
+  };
+}

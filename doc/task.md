@@ -15,17 +15,11 @@
     - [x] `setAll()`
     - [x] `document.cookie` in browser console
   - [ ] Test cases
-
-## UI & Content
-
 - [x] Hero banner
-
-## Performance & Assets
-
 - [ ] Optimize fetcher lib function
 - [ ] Add `sizes` attribute to `next/image`
 - [ ] Domain / Contentful setup
 
-## References
+## To look up
 
 - [ ] Debugging tips

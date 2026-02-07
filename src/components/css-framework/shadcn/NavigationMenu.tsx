@@ -7,6 +7,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 import { LogoutButton } from "./LogoutButton";
@@ -30,14 +32,40 @@ export default async function NavigationMenuBar() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/css-framework">CSS plugin pages</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/products">Products</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
+        <NavigationMenuItem className="hidden md:block">
+          <NavigationMenuTrigger>Component work</NavigationMenuTrigger>
+          <NavigationMenuContent className="bg-white">
+            <ul className="grid w-[200px] gap-4">
+              <li>
+                <NavigationMenuLink
+                  asChild
+                  className={navigationMenuTriggerStyle()}
+                >
+                  <Link href="/css-framework">CSS plugin pages</Link>
+                </NavigationMenuLink>
+                <NavigationMenuLink
+                  asChild
+                  className={navigationMenuTriggerStyle()}
+                >
+                  <Link href="/ui-in-the-work">UI in the work</Link>
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        {!!loginUser && (
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+            >
+              <Link href="/dashboard">Dashboard</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        )}
         <NavigationMenuItem>
           {!!loginUser ? (
             <LogoutButton />
@@ -50,27 +78,6 @@ export default async function NavigationMenuBar() {
             </NavigationMenuLink>
           )}
         </NavigationMenuItem>
-        {/* <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>New things to come</NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-white">
-            <ul className="grid w-[200px] gap-4">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Tailwind pages</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="/login">Login page</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Blogs SSG</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="/ui-in-the-work">UI In The Work</Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );

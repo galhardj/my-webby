@@ -1,5 +1,5 @@
 import Footer from "@/src/components/common/Footer";
-import NavigationMenuBar from "@/src/components/css-framework/shadcn/NavigationMenu";
+import NavigationMenuBar from "@/src/components/mock-model/shadcn/NavigationMenu";
 
 export default function RootLayout({
   children,

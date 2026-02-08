@@ -1,10 +1,10 @@
-import StatusCard from "@/src/components/css-framework/shadcn/StatusCard";
-import HighlightCarousel from "@/src/components/css-framework/shadcn/HighlightCarousel";
-import Timeline from "@/src/components/css-framework/daisyui/Timeline";
-import Diff from "@/src/components/css-framework/daisyui/Diff";
-import Testimonial from "@/src/components/css-framework/tailwindcss/Testimonial";
-import GridList from "@/src/components/css-framework/tailwindcss/GridList/GridList";
-import ModalDemo from "@/src/components/css-framework/Modal";
+import StatusCard from "@/src/components/mock-model/shadcn/StatusCard";
+import HighlightCarousel from "@/src/components/mock-model/shadcn/HighlightCarousel";
+import Timeline from "@/src/components/mock-model/daisyui/Timeline";
+import Diff from "@/src/components/mock-model/daisyui/Diff";
+import Testimonial from "@/src/components/mock-model/tailwindcss/Testimonial";
+import GridList from "@/src/components/mock-model/tailwindcss/GridList/GridList";
+import ModalDemo from "@/src/components/mock-model/Modal";
 import ModalSection from "@/src/components/common/Modal";
 
 export default function Page() {

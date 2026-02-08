@@ -1,4 +1,4 @@
-import BannerLegacy from "@/src/components/css-framework/BannerLegacy";
+import BannerLegacy from "@/src/components/mock-model/BannerLegacy";
 import Banner from "@/src/components/common/Banner";
 import Accordion from "@/src/components/common/Accordion";
 import Form from "@/src/components/common/Forms/Contact/Contact";

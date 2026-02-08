@@ -1,5 +1,5 @@
-import AdminContactsGrid from "@/src/components/css-framework/tailwindcss/GridList/GridClaude";
-import ToggleSwitch from "@/src/components/css-framework/tailwindcss/ToggleSwitch";
+import AdminContactsGrid from "@/src/components/mock-model/tailwindcss/GridList/GridClaude";
+import ToggleSwitch from "@/src/components/mock-model/tailwindcss/ToggleSwitch";
 import HeroBanner from "@/src/components/common/Hero";
 import { HERO_BANNER } from "@/src/constants/banner";
 

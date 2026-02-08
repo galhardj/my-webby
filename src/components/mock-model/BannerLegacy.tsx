@@ -1,5 +1,5 @@
-import Text from "@/src/components/atomic/atom/Text";
-import Image from "@/src/components/atomic/atom/Image";
+import Text from "@/src/components/mock-model/Text";
+import Image from "@/src/components/mock-model/Image";
 
 const BannerLegacy = () => {
   return (

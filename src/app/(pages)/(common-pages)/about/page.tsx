@@ -1,6 +1,6 @@
-import BannerLegacy from "@/src/components/common/Banner/BannerLegacy/BannerLegacy";
-import Banner from "@/src/components/common/Banner/Banner";
-import Accordion from "@/src/components/common/Accordion/Accordion";
+import BannerLegacy from "@/src/components/css-framework/BannerLegacy";
+import Banner from "@/src/components/common/Banner";
+import Accordion from "@/src/components/common/Accordion";
 import Form from "@/src/components/common/Forms/Contact/Contact";
 import { BANNER } from "@/src/constants/banner";
 import { ACCORDION_ITEMS } from "@/src/constants/accordion";

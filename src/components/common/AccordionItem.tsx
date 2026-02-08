@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "./AccordionItem.module.css";
 import type { AccordionItemProps } from "@/src/type/props";
 
 const AccordionItem = ({
@@ -12,7 +11,7 @@ const AccordionItem = ({
 }: AccordionItemProps) => {
   return (
     <details
-      className={styles["accordion-item"]}
+      className="py-4"
       onClick={() => onItemClick(id)}
       open={openItem}
     >

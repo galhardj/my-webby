@@ -1,3 +1,5 @@
+import NavigationMenuBar from "@/src/components/mock-model/shadcn/NavigationMenu";
+
 export default function RootLayout({
   children,
 }: {
@@ -5,6 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <>
+      <NavigationMenuBar variant="fixed-transparent" />
       <main className="min-h-dvh">{children}</main>
     </>
   );

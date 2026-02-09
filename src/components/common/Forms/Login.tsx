@@ -33,8 +33,6 @@ const LoginForm = () => {
     try {
       await getLoginUserData(userEmail, userPassword);
 
-      // TODO: /dashboard page
-      // TODO: have the login header link replaced with logout
       router.push("/about");
     } catch (err) {
       console.error("Login request failed:", err);

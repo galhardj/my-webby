@@ -25,6 +25,7 @@ const config = {
     "src/components/common/**/*.{ts,tsx}",
     "src/hooks/**/*.{ts,tsx}",
     "src/lib/**/*.{ts,tsx}",
+    "src/app/api/**/*.{ts,tsx}",
     "!src/**/*.test.{ts,tsx}",
     "!src/**/*.spec.{ts,tsx}",
     "!src/**/__tests__/**",

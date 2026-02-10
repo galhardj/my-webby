@@ -54,6 +54,7 @@ const LoginForm = () => {
             id="login-username"
             type="email"
             label="Username or email"
+            data-testid="login-email"
             onChange={() => setError("")}
             ref={emailRef}
             required
@@ -62,6 +63,7 @@ const LoginForm = () => {
             id="login-password"
             type={showPass ? "text" : "password"}
             label="Password"
+            data-testid="login-password"
             onChange={() => setError("")}
             ref={passwordRef}
             required
@@ -70,6 +72,7 @@ const LoginForm = () => {
             <Button
               style="icon"
               styleType="password"
+              aria-label="toggle password visibility"
               onMouseDown={(e) => e.preventDefault()}
               onClick={() => setShowPass((p) => !p)}
             >
@@ -77,8 +80,14 @@ const LoginForm = () => {
             </Button>
           </Input>
 
-          {error && <p className="text-red-400">{error}</p>}
-          <Button type="submit">Login</Button>
+          {error && (
+            <p className="text-red-400" role="alert">
+              {error}
+            </p>
+          )}
+          <Button type="submit" data-testid="login-submit">
+            Login
+          </Button>
         </Form>
       </div>
     </div>

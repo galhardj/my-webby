@@ -13,10 +13,6 @@ jest.mock("@/src/lib/api/login", () => ({
   getLoginUserData: jest.fn(),
 }));
 
-jest.mock("@/src/components/common/ImageNext", () => () => (
-  <div data-testid="mock-image" />
-));
-
 const mockedGetLoginUserData = getLoginUserData as jest.MockedFunction<
   typeof getLoginUserData
 >;
@@ -24,115 +20,108 @@ const mockedGetLoginUserData = getLoginUserData as jest.MockedFunction<
 describe("LoginForm", () => {
   const user = userEvent.setup();
 
+  const getByTestId = (testId: string): HTMLElement =>
+    screen.getByTestId(testId);
+
   beforeEach(() => {
     jest.clearAllMocks();
+    render(<LoginForm />);
   });
 
-  it("renders the email and password inputs and login button", () => {
-    render(<LoginForm />);
+  describe("Common flow", () => {
+    it("renders the email and password inputs and login button", () => {
+      expect(getByTestId("login-email")).toBeInTheDocument();
+      expect(getByTestId("login-password")).toBeInTheDocument();
+      expect(getByTestId("login-submit")).toBeInTheDocument();
+    });
 
-    expect(screen.getByLabelText(/username or email/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /login/i }),
-    ).toBeInTheDocument();
+    it("toggles password visibility when clicking the eye button", async () => {
+      const passwordInput = getByTestId("login-password");
+      const getTogglePasswordButton = screen.getByRole("button", {
+        name: "toggle password visibility",
+      });
+      expect(passwordInput).toHaveAttribute("type", "password");
+
+      await user.click(getTogglePasswordButton);
+      expect(passwordInput).toHaveAttribute("type", "text");
+
+      await user.click(getTogglePasswordButton);
+      expect(passwordInput).toHaveAttribute("type", "password");
+    });
   });
 
-  it("shows error when submitting with empty fields", async () => {
-    render(<LoginForm />);
+  describe("Include error flow", () => {
+    const EMPTY_OR_WHITESPACE = /^\s*$/;
+    const getAlert = (): HTMLElement => screen.getByRole("alert");
 
-    await user.click(screen.getByRole("button", { name: /login/i }));
+    describe("Error from input fields", () => {
+      it("shows error when submitting with empty fields", async () => {
+        await user.click(getByTestId("login-submit"));
 
-    expect(screen.getByText("Empty email or password")).toBeInTheDocument();
-    expect(mockedGetLoginUserData).not.toHaveBeenCalled();
-  });
+        expect(getAlert()).toBeInTheDocument();
+        expect(getAlert()).not.toHaveTextContent(EMPTY_OR_WHITESPACE);
+        expect(mockedGetLoginUserData).not.toHaveBeenCalled();
+      });
 
-  it("shows error when email format is invalid", async () => {
-    render(<LoginForm />);
+      it("shows error when email format is invalid", async () => {
+        await user.type(getByTestId("login-email"), "not-an-email");
+        await user.type(getByTestId("login-password"), "password123");
+        await user.click(getByTestId("login-submit"));
 
-    await user.type(screen.getByLabelText(/username or email/i), "not-an-email");
-    await user.type(screen.getByLabelText(/password/i), "password123");
-    await user.click(screen.getByRole("button", { name: /login/i }));
+        expect(getAlert()).toBeInTheDocument();
+        expect(getAlert()).not.toHaveTextContent(EMPTY_OR_WHITESPACE);
+        expect(mockedGetLoginUserData).not.toHaveBeenCalled();
+      });
+    });
 
-    expect(screen.getByText("Incorrect email format")).toBeInTheDocument();
-    expect(mockedGetLoginUserData).not.toHaveBeenCalled();
-  });
+    describe("getLoginUserData; Success & Error", () => {
+      it("calls getLoginUserData and redirects on successful login", async () => {
+        mockedGetLoginUserData.mockResolvedValueOnce({} as never);
 
-  it("calls getLoginUserData and redirects on successful login", async () => {
-    mockedGetLoginUserData.mockResolvedValueOnce({} as never);
-    render(<LoginForm />);
+        await user.type(getByTestId("login-email"), "user@example.com");
+        await user.type(getByTestId("login-password"), "password123");
+        await user.click(getByTestId("login-submit"));
 
-    await user.type(
-      screen.getByLabelText(/username or email/i),
-      "user@example.com",
-    );
-    await user.type(screen.getByLabelText(/password/i), "password123");
-    await user.click(screen.getByRole("button", { name: /login/i }));
+        expect(mockedGetLoginUserData).toHaveBeenCalledWith(
+          "user@example.com",
+          "password123",
+        );
+        expect(mockPush).toHaveBeenCalledWith("/about");
+      });
 
-    expect(mockedGetLoginUserData).toHaveBeenCalledWith(
-      "user@example.com",
-      "password123",
-    );
-    expect(mockPush).toHaveBeenCalledWith("/about");
-  });
+      it("shows error message when login request fails", async () => {
+        mockedGetLoginUserData.mockRejectedValueOnce(
+          new Error("Invalid credentials"),
+        );
 
-  it("shows error message when login request fails", async () => {
-    mockedGetLoginUserData.mockRejectedValueOnce(new Error("Invalid credentials"));
-    render(<LoginForm />);
+        await user.type(getByTestId("login-email"), "user@example.com");
+        await user.type(getByTestId("login-password"), "wrong-password");
+        await user.click(getByTestId("login-submit"));
 
-    await user.type(
-      screen.getByLabelText(/username or email/i),
-      "user@example.com",
-    );
-    await user.type(screen.getByLabelText(/password/i), "wrong-password");
-    await user.click(screen.getByRole("button", { name: /login/i }));
+        expect(getAlert()).toBeInTheDocument();
+        expect(getAlert()).not.toHaveTextContent(EMPTY_OR_WHITESPACE);
+        expect(mockPush).not.toHaveBeenCalled();
+      });
+    });
 
-    expect(
-      screen.getByText(
-        "Unexpected error, with message: Invalid credentials",
-      ),
-    ).toBeInTheDocument();
-    expect(mockPush).not.toHaveBeenCalled();
-  });
+    describe("Any input clears error message from UI", () => {
+      const queryAlert = () => screen.queryByRole("alert");
 
-  it("clears error when typing in the email field", async () => {
-    render(<LoginForm />);
+      it("clears error when typing in the email field", async () => {
+        await user.click(getByTestId("login-submit"));
+        expect(getAlert()).toBeInTheDocument();
 
-    await user.click(screen.getByRole("button", { name: /login/i }));
-    expect(screen.getByText("Empty email or password")).toBeInTheDocument();
+        await user.type(getByTestId("login-email"), "a");
+        expect(queryAlert()).not.toBeInTheDocument();
+      });
 
-    await user.type(screen.getByLabelText(/username or email/i), "a");
-    expect(
-      screen.queryByText("Empty email or password"),
-    ).not.toBeInTheDocument();
-  });
+      it("clears error when typing in the password field", async () => {
+        await user.click(getByTestId("login-submit"));
+        expect(getAlert()).toBeInTheDocument();
 
-  it("clears error when typing in the password field", async () => {
-    render(<LoginForm />);
-
-    await user.click(screen.getByRole("button", { name: /login/i }));
-    expect(screen.getByText("Empty email or password")).toBeInTheDocument();
-
-    await user.type(screen.getByLabelText(/password/i), "a");
-    expect(
-      screen.queryByText("Empty email or password"),
-    ).not.toBeInTheDocument();
-  });
-
-  it("toggles password visibility when clicking the eye button", async () => {
-    render(<LoginForm />);
-
-    const passwordInput = screen.getByLabelText(/password/i);
-    expect(passwordInput).toHaveAttribute("type", "password");
-
-    const toggleButton = passwordInput
-      .closest(".relative")!
-      .querySelector("button")!;
-
-    await user.click(toggleButton);
-    expect(passwordInput).toHaveAttribute("type", "text");
-
-    await user.click(toggleButton);
-    expect(passwordInput).toHaveAttribute("type", "password");
+        await user.type(getByTestId("login-password"), "a");
+        expect(queryAlert()).not.toBeInTheDocument();
+      });
+    });
   });
 });

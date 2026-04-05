@@ -9,12 +9,9 @@ const AccordionItem = ({
   openItem,
   onItemClick,
 }: AccordionItemProps) => {
+  // TODO: change to onToggle
   return (
-    <details
-      className="py-4"
-      onClick={() => onItemClick(id)}
-      open={openItem}
-    >
+    <details className="py-4" onClick={() => onItemClick(id)} open={openItem}>
       <summary>{summary}</summary>
       <p>{description}</p>
     </details>

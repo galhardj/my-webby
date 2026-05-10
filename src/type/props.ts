@@ -1,18 +1,3 @@
-export type ButtonProps = Omit<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "className"
-> & {
-  style?: "commonButton" | "icon";
-  styleType?:
-    | "yellow"
-    | "yellowDark"
-    | "blue"
-    | "resetButton"
-    | "password"
-    | "chevronLeft"
-    | "chevronRight";
-};
-
 export interface ContainerBlockProps {
   children: React.ReactNode;
   type: "standard-block" | "screen-centered";

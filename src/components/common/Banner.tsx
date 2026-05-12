@@ -1,6 +1,21 @@
-import type { Banner } from "@/src/type/content";
+interface BannerProps {
+  position: "left" | "right";
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  description?: string;
+  richText?: React.ReactNode;
+}
 
-const Banner = ({ position, image, title, description, richText }: Banner) => {
+const Banner = ({
+  position,
+  image,
+  title,
+  description,
+  richText,
+}: BannerProps) => {
   return (
     <section
       className={`flex flex-col gap-8 lg:gap-16 md:${position === "right" ? "flex-row-reverse" : "flex-row"}`}

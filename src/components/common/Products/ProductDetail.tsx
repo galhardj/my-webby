@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "../Button";
+import { IconButton } from "@/src/components/common/Button";
 import Link from "../Link";
 import ImageNext from "@/src/components/common/ImageNext";
 import { useState } from "react";
@@ -60,20 +60,12 @@ const ProductDetail = ({
             alt={product.name}
             className="h-full w-full rounded-sm object-contain"
           />
-          <Button
-            style="icon"
-            styleType="chevronLeft"
-            onClick={slidehandler("prev")}
-          >
+          <IconButton category="chevronLeft" onClick={slidehandler("prev")}>
             <ChevronLeft />
-          </Button>
-          <Button
-            style="icon"
-            styleType="chevronRight"
-            onClick={slidehandler("next")}
-          >
+          </IconButton>
+          <IconButton category="chevronRight" onClick={slidehandler("next")}>
             <ChevronRight />
-          </Button>
+          </IconButton>
         </figure>
         <div
           className={`flex w-full flex-1 flex-col items-center rounded-xl p-6 ${typeColor[product.type[0]]} md:p-10`}

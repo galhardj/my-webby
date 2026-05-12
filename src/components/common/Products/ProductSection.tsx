@@ -4,7 +4,7 @@ import { useState, useMemo, Dispatch } from "react";
 import ProductList from "./ProductList";
 import SearchBox from "./SearchBox";
 import SortItems from "./SortItems";
-import Button from "../Button";
+import { RegButton, IconButton } from "@/src/components/common/Button";
 import ProductDetail from "./ProductDetail";
 import ContainerBlock from "@/src/components/common/ContainerBlock";
 import { PokemonDetail } from "@/src/type/pokemon";
@@ -52,32 +52,32 @@ const ProductSection = ({
 
   const ButtonExpand = () => (
     <div className="flex gap-3">
-      <Button
-        styleType="yellow"
+      <RegButton
+        color="yellow"
         onClick={() => setItemLen((prev) => prev + lengthDiff)}
         data-testid="show-more-products"
       >
         Show more
-      </Button>
-      <Button
-        styleType="yellowDark"
+      </RegButton>
+      <RegButton
+        color="yellowDark"
         onClick={() => setItemLen(productList.length)}
         data-testid="show-all-products"
       >
         Show all
-      </Button>
+      </RegButton>
       {itemLen > lengthDiff && <ButtonCollapse />}
     </div>
   );
 
   const ButtonCollapse = () => (
-    <Button
-      styleType="blue"
+    <RegButton
+      color="blue"
       onClick={() => setItemLen(lengthDiff)}
       data-testid="minimize-product-list"
     >
       Minimize
-    </Button>
+    </RegButton>
   );
 
   const ButtonSection = () => (
@@ -94,18 +94,17 @@ const ProductSection = ({
 
   const ResetButton = () => {
     return (
-      <Button
+      <IconButton
         onClick={() => {
           setSearchQuery("");
           setCategory("");
           setItemLen(lengthDiff);
         }}
-        style="icon"
-        styleType="resetButton"
+        category="resetButton"
         aria-label="Clear product section filters"
       >
         <CloseIcon className="h-6 w-6 text-red-500" />
-      </Button>
+      </IconButton>
     );
   };
 

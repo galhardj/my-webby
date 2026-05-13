@@ -16,10 +16,12 @@ import { buttonVariants } from "@/src/constants/styles";
 
 interface LinkProps {
   href: string;
-  buttonColor?: VariantProps<typeof linkButtonVariants>["color"];
+  buttonColor?: buttonColors;
   children: ReactNode;
   className?: string;
 }
+
+export type buttonColors = VariantProps<typeof linkButtonVariants>["color"];
 
 const linkButtonVariants = buttonVariants(
   "text-sm rounded-xl px-7 py-2 font-medium text-gray-200 md:text-base md:py-3 md:mt-3",

@@ -1,4 +1,5 @@
 import { cva } from "class-variance-authority";
+import { Link, type buttonColors } from "@/src/components/common/Button";
 
 export type FeatureProps = {
   position: "left" | "right";
@@ -8,7 +9,12 @@ export type FeatureProps = {
   };
   title: string;
   description?: string;
-  richText?: React.ReactNode;
+  richText?: React.ReactNode; //specifically from Contentful api
+  button?: {
+    label: string;
+    href: string;
+    buttonColor: buttonColors;
+  };
 };
 
 const featureVariants = cva("flex flex-col gap-8 lg:gap-16", {
@@ -29,6 +35,7 @@ const Feature = ({
   title,
   description,
   richText,
+  button,
 }: FeatureProps) => {
   return (
     <section className={featureVariants({ position })}>
@@ -45,6 +52,13 @@ const Feature = ({
           richText
         ) : (
           <p className="whitespace-pre-line">{description}</p>
+        )}
+        {button ? (
+          <Link href={button.href} buttonColor={button.buttonColor}>
+            {button.label}
+          </Link>
+        ) : (
+          <></>
         )}
       </div>
     </section>

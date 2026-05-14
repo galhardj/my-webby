@@ -50,7 +50,11 @@ const Feature = ({
         <h2 className="text-left">{title}</h2>
         {richText || <p className="whitespace-pre-line">{description}</p>}
         {button && (
-          <Link href={button.href} buttonColor={button.buttonColor}>
+          <Link
+            href={button.href}
+            buttonColor={button.buttonColor}
+            className="self-stretch md:self-start"
+          >
             {button.label}
           </Link>
         )}

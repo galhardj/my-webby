@@ -33,6 +33,7 @@ export default async function Page() {
         richText={documentToReactComponents(
           contentfulBanner.fields.description,
         )}
+        button={FEATURE_RECRUITMENT.button}
       />
       <Feature
         position={FEATURE_CHARITY.position}

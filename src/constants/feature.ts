@@ -10,7 +10,7 @@ export const FEATURE_FEEDBACK: FeatureProps = {
   description:
     "Do we make you smile, or is there somewhere we can improve? Take our quick survey, and you could win a £50 Pret gift card.",
   button: {
-    label: "Submit a say",
+    label: "Have a say",
     href: "https://support.google.com/",
     buttonColor: "transparent",
   },
@@ -25,6 +25,11 @@ export const FEATURE_RECRUITMENT: FeatureProps = {
   title: "Welcome back, Pumpkin Spice Latte",
   description:
     "It's the sip you've been waiting for all year. Our Pumpkin Spice Latte brings autumn to life in every cup.",
+  button: {
+    label: "Submit here",
+    href: "http://linkedin.com/",
+    buttonColor: "transparent",
+  },
 };
 
 export const FEATURE_CHARITY: FeatureProps = {

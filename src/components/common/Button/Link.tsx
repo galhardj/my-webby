@@ -12,7 +12,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { cn } from "@/src/lib/utils/mergeTailwind";
 import { type VariantProps } from "class-variance-authority";
-import { buttonVariants } from "@/src/constants/styles";
+import { buttonVariants } from "./styles";
 
 interface LinkProps {
   href: string;

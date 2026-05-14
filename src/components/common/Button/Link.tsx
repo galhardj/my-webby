@@ -11,7 +11,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { cn } from "@/src/lib/utils/mergeTailwind";
-import { buttonVariants, type buttonColors } from "./styles";
+import { linkButtonVariants, type buttonColors } from "./styles";
 
 interface LinkProps {
   href: string;
@@ -19,10 +19,6 @@ interface LinkProps {
   children: ReactNode;
   className?: string;
 }
-
-const linkButtonVariants = buttonVariants(
-  "text-sm rounded-xl px-7 py-2 font-medium text-gray-200 md:text-base md:py-3 md:mt-3",
-);
 
 const AppLink = ({ href, buttonColor, className, children }: LinkProps) => {
   //SSR compatibility — window API doesn't exist in server
@@ -38,7 +34,7 @@ const AppLink = ({ href, buttonColor, className, children }: LinkProps) => {
   };
 
   const style = cn(
-    buttonColor ? linkButtonVariants({ color: buttonColor }) : "",
+    buttonColor && linkButtonVariants({ color: buttonColor }),
     className,
   );
 

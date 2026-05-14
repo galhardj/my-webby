@@ -1,11 +1,7 @@
 import React from "react";
 import { type VariantProps } from "class-variance-authority";
 import { cn } from "@/src/lib/utils/mergeTailwind";
-import { buttonVariants } from "./styles";
-
-const regButtonVariants = buttonVariants(
-  "mt-3 rounded-xl border px-6 py-3 font-medium text-gray-600",
-);
+import { regButtonVariants } from "./styles";
 
 type RegButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   color?: VariantProps<typeof regButtonVariants>["color"];

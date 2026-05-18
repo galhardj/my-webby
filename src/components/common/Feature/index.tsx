@@ -1,8 +1,8 @@
-import { featureVariants } from "./styles";
+import { featureVariants, type featurePositions } from "./styles";
 import { Link, type buttonColors } from "@/src/components/common/Button";
 
 export type FeatureProps = {
-  position: "left" | "right";
+  position: featurePositions;
   image: {
     src: string;
     alt: string;

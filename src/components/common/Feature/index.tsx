@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority";
+import { featureVariants } from "./styles";
 import { Link, type buttonColors } from "@/src/components/common/Button";
 
 export type FeatureProps = {
@@ -17,18 +17,6 @@ export type FeatureProps = {
   };
 };
 
-const featureVariants = cva("flex flex-col gap-8 lg:gap-16", {
-  variants: {
-    position: {
-      left: "md:flex-row",
-      right: "md:flex-row-reverse",
-    },
-  },
-  defaultVariants: {
-    position: "left",
-  },
-});
-
 const Feature = ({
   position,
   image,
@@ -37,6 +25,9 @@ const Feature = ({
   richText,
   button,
 }: FeatureProps) => {
+  // TODO: Component to consider:
+  // - NextImage
+  // - Heading
   return (
     <section className={featureVariants({ position })}>
       <figure className="aspect-square md:w-2/5">
